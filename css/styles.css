@@ -1,0 +1,2595 @@
+/* ==========================================================================
+   MK Motors Hub & Garage — Ruiru, Kenya
+   Custom Design System: Orange (#FF5A00) • Royal Blue (#091B34 / #0F2D59) • White (#FFFFFF)
+   Pure Vanilla CSS3 — GPU-Accelerated Motion & Mobile 2-Per-Row Architecture
+   ========================================================================== */
+
+:root {
+  /* Core Brand Palette: Vibrant Orange + Deep Royal Blue + Pure Crisp White */
+  --orange: #ff5a00;
+  --orange-dark: #df4e00;
+  --orange-light: #ff7a2f;
+  --orange-tint: #fff2eb;
+  --orange-glow: rgba(255, 90, 0, 0.28);
+
+  --blue-deep: #08182e;
+  --blue-navy: #0d2547;
+  --blue-royal: #143b73;
+  --blue-accent: #1d56b8;
+  --blue-tint: #edf4ff;
+
+  --white: #ffffff;
+  --bg-light: #f4f7fc;
+  --surface-border: #dce4f0;
+  --text-primary: #0b1e38;
+  --text-secondary: #4c5f7a;
+  --text-muted: #73849c;
+
+  --whatsapp: #1fa855;
+  --whatsapp-dark: #178a44;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 10px rgba(8, 24, 46, 0.06);
+  --shadow-md: 0 10px 28px rgba(8, 24, 46, 0.10);
+  --shadow-lg: 0 20px 48px rgba(8, 24, 46, 0.18);
+
+  --container-max: 1220px;
+  --header-h: 68px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 10px);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--white);
+  color: var(--text-primary);
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Continuous Scroll Top Progress Bar */
+.scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: rgba(8, 24, 46, 0.14);
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--orange) 0%, #ff8533 60%, var(--blue-accent) 100%);
+  transition: width 0.08s linear;
+}
+
+/* Top Utility Strip */
+.top-strip {
+  background: var(--blue-deep);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 7px 0;
+}
+
+.top-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.top-strip-left,
+.top-strip-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.strip-item:hover {
+  color: var(--orange-light);
+}
+
+.strip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.25);
+}
+
+/* Sticky Main Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--surface-border);
+  transition: box-shadow 0.25s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 6px 24px rgba(8, 24, 46, 0.09);
+}
+
+.header-inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-emblem {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-royal) 100%);
+  border: 2px solid var(--orange);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: -0.03em;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(255, 90, 0, 0.2);
+}
+
+.brand-emblem span {
+  color: var(--orange);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+
+.brand-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  letter-spacing: -0.02em;
+}
+
+.brand-title em {
+  font-style: normal;
+  color: var(--orange);
+}
+
+.brand-sub {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+/* Desktop Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--blue-deep);
+  background: var(--bg-light);
+}
+
+.nav-link.active {
+  color: var(--white);
+  background: var(--blue-deep);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--orange);
+}
+
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-orange {
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 6px 18px var(--orange-glow);
+}
+
+.btn-orange:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
+.btn-blue {
+  background: var(--blue-deep);
+  color: var(--white);
+}
+
+.btn-blue:hover {
+  background: var(--blue-royal);
+  transform: translateY(-1px);
+}
+
+.btn-white-outline {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+}
+
+.btn-white-outline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--orange);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--blue-deep);
+  border: 1.5px solid var(--surface-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--blue-accent);
+  color: var(--blue-accent);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: var(--white);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-dark);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  border-radius: 8px;
+}
+
+/* Mobile Compact Quick Scroll Strip (Visible on Mobile for 1-Tap Continuous Section Jump) */
+.mobile-section-bar {
+  display: none;
+  background: var(--white);
+  border-bottom: 1px solid var(--surface-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 6px 12px;
+  gap: 6px;
+}
+
+.mobile-section-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   SECTION 1: HOME HERO + MINIMIZED 2-SECOND SLIDESHOW WINDOW
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 90, 0, 0.20), transparent 40%),
+    radial-gradient(circle at 12% 85%, rgba(29, 86, 184, 0.28), transparent 46%),
+    linear-gradient(135deg, #071529 0%, #0d264a 60%, #123669 100%);
+  color: var(--white);
+  padding: 46px 0 54px;
+  overflow: hidden;
+}
+
+/* Subtle diagonal technical accent grid */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 90, 0, 0.16);
+  border: 1px solid rgba(255, 90, 0, 0.45);
+  color: #ffb085;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.45); opacity: 0.55; }
+}
+
+.hero-title {
+  font-size: clamp(1.9rem, 3.6vw, 3.05rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+}
+
+.hero-title .accent-orange {
+  color: var(--orange);
+}
+
+.hero-lead {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 560px;
+  margin-bottom: 22px;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+/* High-Conversion Quick Finder Strip inside Hero */
+.hero-quick-search {
+  background: var(--white);
+  color: var(--text-primary);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--orange);
+  margin-bottom: 20px;
+}
+
+.quick-search-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue-royal);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-search-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 8px;
+}
+
+.compact-select,
+.compact-input {
+  width: 100%;
+  height: 38px;
+  padding: 6px 10px;
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-xs);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.compact-select:focus,
+.compact-input:focus,
+.compact-textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  background-color: var(--white);
+}
+
+/* Hero Conversion Trust Metrics */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stat-chip {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+}
+
+.stat-num {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.stat-num span {
+  color: var(--orange);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MINIMIZED LIVE SHOWCASE WINDOW (2-SECOND REFRESH RATE)
+   ========================================================================== */
+.mini-window-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mini-window {
+  width: 100%;
+  max-width: 430px;
+  background: var(--white);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.42), 0 0 0 2px rgba(255, 90, 0, 0.55);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+}
+
+/* Optional Floating PiP Mini-Window Mode when user clicks Dock button */
+.mini-window.floating-pip {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  width: 280px;
+  max-width: calc(100vw - 96px);
+  z-index: 990;
+  box-shadow: 0 18px 42px rgba(8, 24, 46, 0.38), 0 0 0 2px var(--orange);
+}
+
+.mini-window-bar {
+  background: var(--blue-deep);
+  color: var(--white);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.w-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.w-dot.orange { background: var(--orange); }
+.w-dot.blue { background: #38bdf8; }
+.w-dot.white { background: rgba(255, 255, 255, 0.65); }
+
+.window-title-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffd5bf;
+}
+
+.window-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.win-ctrl-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 7px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.win-ctrl-btn:hover {
+  background: var(--orange);
+}
+
+/* 2-Second Refresh Visual Progress Sweep */
+.mini-progress-track {
+  width: 100%;
+  height: 3px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.mini-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--orange);
+  transform-origin: left center;
+}
+
+.mini-progress-fill.animating {
+  animation: sweepTwoSec 2000ms linear forwards;
+}
+
+@keyframes sweepTwoSec {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.mini-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--blue-deep);
+  overflow: hidden;
+}
+
+.mini-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  transition: opacity 0.34s ease, transform 1.9s ease-out;
+}
+
+.mini-slide-img.entering {
+  transform: scale(1.045);
+}
+
+.mini-badge-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 3;
+}
+
+.slide-type-pill {
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.slide-subtag {
+  background: rgba(8, 24, 46, 0.82);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.slide-counter-pill {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(8, 24, 46, 0.82);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  z-index: 3;
+}
+
+.mini-caption-box {
+  padding: 11px 13px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mini-caption-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-caption-sub {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-footer {
+  padding: 8px 13px 10px;
+  background: var(--bg-light);
+  border-top: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mini-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mini-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: width 0.22s ease, background-color 0.22s ease;
+}
+
+.mini-dot.active {
+  width: 18px;
+  background: var(--orange);
+}
+
+.mini-live-note {
+  font-size: 0.69rem;
+  font-weight: 700;
+  color: var(--blue-royal);
+}
+
+/* ==========================================================================
+   SHARED SECTION HEADERS & CONTINUOUS SCROLL RHYTHM
+   ========================================================================== */
+.section {
+  padding: 64px 0;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-light);
+}
+
+.section-navy {
+  background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-navy) 100%);
+  color: var(--white);
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+}
+
+.section-sub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin-top: 6px;
+}
+
+.section-navy .section-sub {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ==========================================================================
+   SECTION 2: CARS — BUY [DEFAULT] / SELL WITH MK MOTORS TOGGLE + FILTERS
+   ========================================================================== */
+.mode-toggle-shell {
+  display: inline-flex;
+  background: var(--blue-deep);
+  padding: 5px;
+  border-radius: 999px;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mode-toggle-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: background-color 0.24s ease, color 0.24s ease, transform 0.18s ease;
+}
+
+.mode-toggle-btn.active {
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 4px 14px var(--orange-glow);
+}
+
+.default-tag {
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Filter Panel (Car-Website Grade Multi-Attribute Filtering) */
+.filter-panel {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.body-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip-btn {
+  border: 1.5px solid var(--surface-border);
+  background: var(--bg-light);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.chip-btn:hover {
+  border-color: var(--blue-accent);
+  color: var(--blue-deep);
+}
+
+.chip-btn.active {
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
+  color: var(--white);
+}
+
+.mobile-filter-toggle {
+  display: none;
+}
+
+.filter-controls-grid {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(6, 1fr);
+  gap: 8px;
+}
+
+/* Interactive Car Compare Button on Card Media */
+.compare-toggle-pill {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(8, 24, 46, 0.85);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 3;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.16s ease;
+}
+
+.compare-toggle-pill:hover {
+  border-color: var(--orange);
+}
+
+.compare-toggle-pill.selected {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* Floating Bottom-Center Compare Tray */
+.compare-tray {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 1045;
+  background: var(--blue-deep);
+  color: var(--white);
+  border: 2px solid var(--orange);
+  border-radius: 999px;
+  padding: 8px 14px 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 14px 34px rgba(8, 24, 46, 0.42);
+  animation: cardFadeIn 0.25s ease-out;
+}
+
+.compare-tray-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 12px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--surface-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table th {
+  color: var(--text-muted);
+  font-weight: 800;
+  width: 24%;
+  background: var(--bg-light);
+}
+
+/* Interactive Kenyan Deposit / Monthly Estimator inside Car Modal */
+.deposit-estimator {
+  background: var(--blue-tint);
+  border: 1.5px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 13px;
+  margin-bottom: 15px;
+}
+
+.estimator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.estimator-result-bar {
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px dashed #93c5fd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+
+/* Garage Symptom Quick-Diagnoser Strip */
+.symptom-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.symptom-label {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffb085;
+  margin-right: 4px;
+}
+
+.symptom-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.16s ease;
+}
+
+.symptom-btn:hover,
+.symptom-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.garage-card.bay-spotlight {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.45), var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.filter-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--surface-border);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.reset-link-btn {
+  background: none;
+  border: none;
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Car Inventory Grid — 3 per row Desktop, STRICT 2 IN ONE ROW on Mobile */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.car-card {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 90, 0, 0.45);
+}
+
+.car-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #0d2547;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.car-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.car-card:hover .car-media img {
+  transform: scale(1.055);
+}
+
+.car-badge-left {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  background: var(--blue-deep);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border-left: 3px solid var(--orange);
+}
+
+.car-badge-year {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.car-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.car-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.car-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  line-height: 1.25;
+}
+
+.car-price-tag {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* Specs Matrix inside Car Card */
+.car-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  background: var(--bg-light);
+  padding: 8px;
+  border-radius: var(--radius-xs);
+  margin: 6px 0 10px;
+}
+
+.spec-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spec-cell svg {
+  width: 13px;
+  height: 13px;
+  color: var(--blue-accent);
+  flex-shrink: 0;
+}
+
+.car-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.hl-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: var(--blue-tint);
+  color: var(--blue-royal);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.car-card-actions {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px;
+}
+
+.quote-wa-btn {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.16s ease;
+}
+
+.quote-wa-btn:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+}
+
+.specs-btn {
+  background: var(--white);
+  color: var(--blue-deep);
+  border: 1.5px solid var(--surface-border);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.specs-btn:hover {
+  border-color: var(--blue-deep);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--surface-border);
+}
+
+/* SELL WITH MK MOTORS PANEL */
+.hidden {
+  display: none !important;
+}
+
+.sell-panel {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-md);
+}
+
+.sell-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.sell-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-light);
+  border-left: 3px solid var(--orange);
+}
+
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--blue-deep);
+  color: var(--white);
+  font-size: 0.76rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.sell-step h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+}
+
+.sell-step p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sell-form-card {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-border);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+}
+
+.compact-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-xs);
+  font-size: 0.82rem;
+  background: var(--white);
+  resize: vertical;
+  min-height: 68px;
+}
+
+/* ==========================================================================
+   SECTION 3: GARAGE SERVICES (RUIRU MECHANICAL & BODY WORKSHOP)
+   ========================================================================== */
+.garage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.garage-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.24s ease, border-color 0.24s ease;
+}
+
+.garage-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.garage-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.garage-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.4s ease;
+}
+
+.garage-card:hover .garage-img-wrap img {
+  transform: scale(1.05);
+}
+
+.bay-pill {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.eta-pill {
+  position: absolute;
+  bottom: 9px;
+  right: 9px;
+  background: rgba(8, 24, 46, 0.88);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.garage-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.garage-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.garage-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 10px;
+}
+
+.garage-checklist {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.garage-checklist li {
+  font-size: 0.76rem;
+  color: #dbeafe;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.garage-checklist li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.garage-book-strip {
+  margin-top: 24px;
+  background: var(--white);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-left: 5px solid var(--orange);
+}
+
+/* ==========================================================================
+   SECTION 4: PROFESSIONAL TRANSPORTATIONS GALLERY (MOVEMENTS ACROSS KENYA)
+   ========================================================================== */
+.transport-filters {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.transport-card {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.transport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.transport-img-box {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--blue-deep);
+}
+
+.transport-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.transport-card:hover .transport-img-box img {
+  transform: scale(1.06);
+}
+
+.route-badge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  background: rgba(8, 24, 46, 0.88);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border-left: 3px solid var(--orange);
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 90, 0, 0.92);
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+.transport-body {
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.transport-route-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  margin-bottom: 4px;
+}
+
+.transport-meta {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.transport-caption {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+/* ==========================================================================
+   SECTION 5: ABOUT US — SHORT, DIRECT, FACTUAL (NO FAKED ORIGIN STORY)
+   ========================================================================== */
+.about-box {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--bg-light);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.about-lead-copy {
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 12px 0 18px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pillar-card {
+  background: var(--white);
+  border: 1px solid var(--surface-border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.pillar-card h4 {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  margin-bottom: 4px;
+}
+
+.pillar-card p {
+  font-size: 0.77rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.about-visual-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.about-visual-collage img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   SECTION 6: GOOGLE VERIFIED REVIEWS (50 REVIEWS, 3 AT A GO, 5s REFRESH)
+   ========================================================================== */
+.google-summary-bar {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.google-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.google-g-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--surface-border);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.rating-big-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rating-score {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--blue-deep);
+}
+
+.stars-gold {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+.verified-count-pill {
+  background: #e8f5e9;
+  color: #166534;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.reviews-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reviews-timer-track {
+  width: 100%;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.reviews-timer-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue-accent), var(--orange));
+  transform-origin: left center;
+}
+
+.reviews-timer-bar.running {
+  animation: sweepFiveSec 5000ms linear forwards;
+}
+
+@keyframes sweepFiveSec {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.reviews-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.review-card {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: cardFadeIn 0.42s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.reviewer-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewer-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-accent));
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 2px solid var(--orange);
+}
+
+.reviewer-name {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+}
+
+.reviewer-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.google-verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 3px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.review-stars-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-cat-pill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  background: var(--orange-tint);
+  color: var(--orange-dark);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.review-text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.52;
+}
+
+/* ==========================================================================
+   SECTION 7: CONTACTS PAGE & FOOTER
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 24px;
+}
+
+.contact-cards-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-info-card {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.c-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--orange-tint);
+  color: var(--orange);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.c-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.c-value {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--blue-deep);
+  word-break: break-word;
+}
+
+.contact-form-box {
+  background: var(--white);
+  border: 1.5px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.site-footer {
+  background: var(--blue-deep);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 34px 0 28px;
+  border-top: 4px solid var(--orange);
+  font-size: 0.84rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON — FIXED ON THE RIGHT-HAND SIDE
+   ========================================================================== */
+.floating-whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1050;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--whatsapp);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  box-shadow: 0 10px 26px rgba(31, 168, 85, 0.45);
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.2s ease;
+}
+
+.floating-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 2px solid rgba(31, 168, 85, 0.55);
+  animation: waPulse 2.2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes waPulse {
+  0% { transform: scale(0.98); opacity: 0.9; }
+  100% { transform: scale(1.16); opacity: 0; }
+}
+
+.floating-whatsapp:hover {
+  background: var(--whatsapp-dark);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ==========================================================================
+   MODALS (CAR FULL SPECS, TRANSPORT LIGHTBOX & ALL 50 REVIEWS MODAL)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 41, 0.76);
+  backdrop-filter: blur(5px);
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.modal-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: cardFadeIn 0.24s ease-out;
+}
+
+.modal-card.wide {
+  max-width: 880px;
+}
+
+.modal-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin: 12px 12px 0 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue-deep);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.all-reviews-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Toast Notification */
+.toast-msg {
+  position: fixed;
+  bottom: 78px;
+  right: 18px;
+  z-index: 1250;
+  background: var(--blue-deep);
+  color: var(--white);
+  border-left: 4px solid var(--orange);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+/* Scroll Reveal Progressive Enhancement */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVENESS
+   CRITICAL REQUIREMENT:
+   - Minimized icons & text boxes on mobile
+   - Products shown 2 IN ONE ROW cleanly without overflow
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mini-window-wrap {
+    align-items: center;
+  }
+
+  .mini-window {
+    max-width: 100%;
+  }
+
+  .filter-controls-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cars-grid,
+  .garage-grid,
+  .transport-grid,
+  .reviews-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sell-panel,
+  .about-box,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 56px;
+  }
+
+  .container {
+    padding: 0 11px;
+  }
+
+  .top-strip {
+    font-size: 0.68rem;
+    padding: 5px 0;
+  }
+
+  .top-strip-right {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .mobile-section-bar {
+    display: flex;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 995;
+  }
+
+  .mobile-nav-pill {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: var(--bg-light);
+    color: var(--blue-deep);
+    border: 1px solid var(--surface-border);
+  }
+
+  .mobile-nav-pill.active {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+  }
+
+  .brand-emblem {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .brand-title {
+    font-size: 0.88rem;
+  }
+
+  .brand-sub {
+    font-size: 0.58rem;
+  }
+
+  .header-cta-group .btn {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Compact Hero & Minimized Text Boxes on Mobile */
+  .hero-section {
+    padding: 22px 0 28px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.64rem;
+    padding: 4px 9px;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-size: 1.52rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-lead {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-cta-row .btn {
+    padding: 8px 12px;
+    font-size: 0.76rem;
+    flex: 1 1 auto;
+  }
+
+  .hero-quick-search {
+    padding: 9px;
+    margin-bottom: 14px;
+  }
+
+  .quick-search-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .compact-select,
+  .compact-input {
+    height: 33px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .compact-textarea {
+    min-height: 54px;
+    padding: 6px 8px;
+    font-size: 0.76rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+
+  .stat-chip {
+    padding: 7px 9px;
+  }
+
+  .stat-num {
+    font-size: 0.98rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+
+  /* Minimized Window on Mobile */
+  .mini-window-bar {
+    padding: 6px 9px;
+  }
+
+  .mini-caption-box {
+    padding: 8px 10px;
+  }
+
+  .mini-caption-title {
+    font-size: 0.8rem;
+  }
+
+  .mini-caption-sub {
+    font-size: 0.7rem;
+  }
+
+  /* Sections Compact Rhythm */
+  .section {
+    padding: 38px 0;
+  }
+
+  .section-head {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 1.28rem;
+  }
+
+  .section-sub {
+    font-size: 0.8rem;
+  }
+
+  .mode-toggle-btn {
+    padding: 7px 12px;
+    font-size: 0.74rem;
+  }
+
+  /* Mobile Filter Panel — Minimized Boxes & Collapsible Extra Filters */
+  .filter-panel {
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+
+  .mobile-filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--blue-tint);
+    color: var(--blue-royal);
+    border: 1px solid #bfdbfe;
+    border-radius: 7px;
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .body-pills {
+    gap: 5px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    padding-bottom: 2px;
+  }
+
+  .chip-btn {
+    padding: 4px 9px;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .filter-controls-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .filter-controls-grid.mobile-collapsed .extra-filter {
+    display: none;
+  }
+
+  /* STRICT 2 PRODUCTS IN ONE ROW ON MOBILE */
+  .cars-grid,
+  .garage-grid,
+  .transport-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px;
+  }
+
+  .car-card,
+  .garage-card,
+  .transport-card {
+    border-radius: 10px;
+  }
+
+  .car-badge-left,
+  .car-badge-year,
+  .bay-pill,
+  .eta-pill,
+  .route-badge,
+  .compare-toggle-pill {
+    font-size: 0.58rem;
+    padding: 2px 5px;
+    top: 6px;
+  }
+
+  .compare-toggle-pill {
+    top: auto;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .compare-tray {
+    left: 12px;
+    right: auto;
+    bottom: 12px;
+    transform: none;
+    padding: 7px 11px;
+    gap: 7px;
+    max-width: calc(100vw - 165px);
+  }
+
+  .compare-tray-label {
+    font-size: 0.68rem;
+  }
+
+  .symptom-strip {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .symptom-btn {
+    padding: 4px 8px;
+    font-size: 0.66rem;
+  }
+
+  .estimator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-badge-left, .bay-pill, .route-badge { left: 6px; }
+  .car-badge-year { right: 6px; }
+
+  .car-body,
+  .garage-body,
+  .transport-body {
+    padding: 8px;
+  }
+
+  .car-title-row {
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 5px;
+  }
+
+  .car-name {
+    font-size: 0.78rem;
+    line-height: 1.22;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 1.9em;
+  }
+
+  .car-price-tag {
+    font-size: 0.76rem;
+  }
+
+  /* Minimized Icons & Compact Specs in 2-Column Mobile Cards */
+  .car-specs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px 4px;
+    padding: 5px;
+    margin: 4px 0 7px;
+  }
+
+  .spec-cell {
+    font-size: 0.62rem;
+    gap: 3px;
+  }
+
+  .spec-cell svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .car-highlights {
+    display: none; /* Keeps 2-up mobile cards super clean; full highlights shown in Specs Modal */
+  }
+
+  .car-card-actions {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .quote-wa-btn {
+    padding: 7px 6px;
+    font-size: 0.68rem;
+    border-radius: 6px;
+    gap: 4px;
+  }
+
+  .quote-wa-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .specs-btn {
+    padding: 5px 6px;
+    font-size: 0.66rem;
+    border-radius: 6px;
+  }
+
+  /* Compact Garage & Transport 2-Up Mobile Cards */
+  .garage-title,
+  .transport-route-title {
+    font-size: 0.78rem;
+    line-height: 1.22;
+  }
+
+  .garage-desc,
+  .transport-caption {
+    font-size: 0.68rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .garage-checklist {
+    margin-bottom: 8px;
+    gap: 2px;
+  }
+
+  .garage-checklist li {
+    font-size: 0.63rem;
+  }
+
+  .transport-meta {
+    font-size: 0.64rem;
+  }
+
+  .garage-body .btn,
+  .transport-body .btn {
+    padding: 6px 8px;
+    font-size: 0.67rem;
+    width: 100%;
+  }
+
+  /* About Pillars Compact on Mobile */
+  .about-box {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Reviews — Compact Stack showing all 3 Active Reviews cleanly at a go */
+  .reviews-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .review-card {
+    padding: 12px;
+    gap: 7px;
+  }
+
+  .review-text {
+    font-size: 0.78rem;
+  }
+
+  .all-reviews-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Compact Contact Form & Cards on Mobile */
+  .form-grid-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .contact-info-card {
+    padding: 10px 12px;
+  }
+
+  .c-icon-box {
+    width: 34px;
+    height: 34px;
+  }
+
+  .c-value {
+    font-size: 0.82rem;
+  }
+
+  .contact-form-box,
+  .sell-panel,
+  .sell-form-card {
+    padding: 14px;
+  }
+
+  /* Compact Right-Hand Floating WhatsApp Button on Mobile */
+  .floating-whatsapp {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 13px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+}
