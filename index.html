@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MK Motors Hub &amp; Garage | Locally Used Cars, Workshop &amp; Transport — Ruiru, Kenya</title>
+  <meta name="description" content="MK Motors Hub & Garage in Ruiru, Kenya — Clean inspected locally used cars (Buy & Sell), full mechanical & body garage bays, and nationwide flatbed & carrier vehicle transport. Call/WhatsApp 0701988296." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Continuous Vertical Scroll Progress Indicator -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Top Contact Bar -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div class="top-strip-left">
+        <span class="strip-item">
+          <span class="strip-dot"></span>
+          <strong>Ruiru, Kenya</strong> • Thika Rd / Eastern Bypass Hub
+        </span>
+        <a href="tel:0701988296" class="strip-item">
+          ☎ <strong>0701 988 296</strong>
+        </a>
+      </div>
+      <div class="top-strip-right">
+        <a href="mailto:moseskibe701@gmail.com" class="strip-item">
+          ✉ moseskibe701@gmail.com
+        </a>
+        <span class="strip-item">Mon–Sat 8:00 AM – 6:30 PM • 24/7 Recovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand-logo" aria-label="MK Motors Hub & Garage Home">
+        <div class="brand-emblem">MK<span>+</span></div>
+        <div class="brand-copy">
+          <span class="brand-title">MK Motors <em>Hub &amp; Garage</em></span>
+          <span class="brand-sub">Ruiru, Kenya • Cars • Garage • Transport</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#cars" class="nav-link">Cars</a>
+        <a href="#garage" class="nav-link">Garage</a>
+        <a href="#transport" class="nav-link">Transport</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#reviews" class="nav-link">Reviews (50)</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <button type="button" class="btn btn-outline btn-sm" onclick="window.switchCarPortal('sell', true)">
+          Sell Car
+        </button>
+        <a href="tel:0701988296" class="btn btn-orange btn-sm">
+          Call 0701 988 296
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Continuous-Scroll Section Bar (Minimized Pills) -->
+  <nav class="mobile-section-bar" aria-label="Mobile Section Quick Jump">
+    <a href="#home" class="mobile-nav-pill active">Home</a>
+    <a href="#cars" class="mobile-nav-pill">Cars</a>
+    <a href="#garage" class="mobile-nav-pill">Garage</a>
+    <a href="#transport" class="mobile-nav-pill">Transport</a>
+    <a href="#about" class="mobile-nav-pill">About</a>
+    <a href="#reviews" class="mobile-nav-pill">50 Reviews</a>
+    <a href="#contact" class="mobile-nav-pill">Contact</a>
+  </nav>
+
+  <main>
+    <!-- =====================================================================
+         PAGE 1: HOME — HIGH CONVERSION HERO + 2-SECOND MINIMIZED SLIDESHOW WINDOW
+         ===================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Left Column: High-Conversion Pitch & Quick Search -->
+        <div class="hero-copy-col">
+          <div class="hero-eyebrow">
+            <span class="pulse-dot"></span>
+            Ruiru's Trusted Locally Used Car Yard &amp; Mechanical Hub
+          </div>
+
+          <h1 class="hero-title">
+            Drive Clean, <span class="accent-orange">Garage-Verified</span> Locally Used Cars in Kenya.
+          </h1>
+
+          <p class="hero-lead">
+            Every vehicle at <strong>MK Motors Hub &amp; Garage (Ruiru)</strong> undergoes a 120-point lift &amp; OBD diagnostic check before sale—backed by in-house servicing, body care, and nationwide flatbed delivery.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#cars" class="btn btn-orange" onclick="window.switchCarPortal('buy', false)">
+              Browse Clean Cars →
+            </a>
+            <button type="button" class="btn btn-white-outline" onclick="window.switchCarPortal('sell', true)">
+              Sell With MK Motors
+            </button>
+            <a href="#garage" class="btn btn-white-outline">
+              Book Garage Bay
+            </a>
+          </div>
+
+          <!-- Instant High-Conversion Car Finder -->
+          <form class="hero-quick-search" id="heroQuickSearchForm">
+            <div class="quick-search-label">
+              <span>Quick Stock Finder • Ruiru Yard</span>
+              <span style="color:var(--orange)">Instant Filter</span>
+            </div>
+            <div class="quick-search-row">
+              <select id="heroMakeSelect" class="compact-select" aria-label="Select Make">
+                <option value="ALL">All Makes</option>
+              </select>
+              <select id="heroBodySelect" class="compact-select" aria-label="Select Body Type">
+                <option value="ALL">All Body Types</option>
+                <option value="SUV">SUV / 4x4</option>
+                <option value="Crossover">Crossover</option>
+                <option value="Pickup">Double Cab Pickup</option>
+                <option value="Wagon">Station Wagon</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Hatchback">Hatchback</option>
+              </select>
+              <select id="heroBudgetSelect" class="compact-select" aria-label="Select Budget">
+                <option value="ALL">Any Budget (KES)</option>
+                <option value="UNDER_1_5M">Under KES 1.5M</option>
+                <option value="1_5M_2_5M">KES 1.5M – 2.5M</option>
+                <option value="2_5M_4M">KES 2.5M – 4.0M</option>
+                <option value="ABOVE_4M">Above KES 4.0M</option>
+              </select>
+              <button type="submit" class="btn btn-blue btn-sm">Find Unit</button>
+            </div>
+          </form>
+
+          <!-- Key Trust Metrics with Animated Counters -->
+          <div class="hero-stats">
+            <div class="stat-chip">
+              <div class="stat-num"><strong data-count-to="120">120</strong><span>-Pt</span></div>
+              <div class="stat-label">Lift &amp; OBD Check</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-num"><strong data-count-to="50">50</strong><span> ★</span></div>
+              <div class="stat-label">Verified Google Reviews</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-num">Same<span>-Day</span></div>
+              <div class="stat-label">TIMS Transfer</div>
+            </div>
+            <div class="stat-chip">
+              <div class="stat-num"><strong data-count-to="47">47</strong><span> Cty</span></div>
+              <div class="stat-label">Kenya Carrier Delivery</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: MINIMIZED LIVE WINDOW SLIDESHOW (2-SECOND REFRESH RATE) -->
+        <div class="mini-window-wrap">
+          <div class="mini-window" id="heroMiniWindow" role="region" aria-label="Live Units and Happy Clients 2-Second Slideshow Window">
+            <div class="mini-window-bar">
+              <div class="window-dots" aria-hidden="true">
+                <span class="w-dot orange"></span>
+                <span class="w-dot blue"></span>
+                <span class="w-dot white"></span>
+              </div>
+              <div class="window-title-pill">
+                <span class="pulse-dot" style="width:6px;height:6px"></span>
+                Units &amp; Clients • 2s
+              </div>
+              <div class="window-actions">
+                <button type="button" class="win-ctrl-btn" id="miniPrevBtn" aria-label="Previous slide">‹</button>
+                <button type="button" class="win-ctrl-btn" id="miniNextBtn" aria-label="Next slide">›</button>
+                <button type="button" class="win-ctrl-btn" id="miniPauseBtn" title="Pause or resume 2-second slideshow">Pause</button>
+                <button type="button" class="win-ctrl-btn" id="miniPipBtn" title="Float mini-window while scrolling">Float</button>
+              </div>
+            </div>
+
+            <!-- Synchronized 2.0-Second Refresh Bar -->
+            <div class="mini-progress-track">
+              <div class="mini-progress-fill animating" id="miniProgressFill"></div>
+            </div>
+
+            <div class="mini-stage">
+              <img
+                id="miniSlideImg"
+                class="mini-slide-img"
+                src="assets/images/client-handover-1.jpg"
+                alt="Happy Kenyan clients receiving car keys at MK Motors Ruiru"
+              />
+              <div class="mini-badge-top">
+                <span class="slide-type-pill" id="miniSlideType">HAPPY CLIENT</span>
+                <span class="slide-subtag" id="miniSlideSubtag">Key Handover • Ruiru Yard</span>
+              </div>
+              <span class="slide-counter-pill" id="miniSlideCounter">01 / 08</span>
+            </div>
+
+            <div class="mini-caption-box">
+              <div class="mini-caption-title" id="miniSlideTitle">Mr. &amp; Mrs. Kamau — Clean Mazda CX-5</div>
+              <div class="mini-caption-sub" id="miniSlideCaption">Full OBD inspection &amp; same-day NTSA TIMS transfer completed in Ruiru.</div>
+            </div>
+
+            <div class="mini-footer">
+              <div class="mini-dots" id="miniSlideDots"></div>
+              <a href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Hub%20%26%20Garage%20Ruiru%2C%20I%20saw%20your%20live%20units%20%26%20handovers%20and%20would%20like%20to%20inquire." target="_blank" rel="noopener" class="mini-live-note">
+                Ask on WhatsApp →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PAGE 2: CARS — BUY [DEFAULT] / SELL WITH MK MOTORS TOGGLE + FULL FILTERS
+         ===================================================================== -->
+    <section id="cars" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">01 • Dealership Showroom — Ruiru</div>
+            <h2 class="section-title">Locally Used Cars — Buy or Sell With Confidence</h2>
+            <p class="section-sub">Filter by make, body type, fuel, drivetrain, or budget—and request a direct quotation on WhatsApp in one tap.</p>
+          </div>
+
+          <!-- BUY [DEFAULT] / SELL WITH MK MOTORS TOGGLE -->
+          <div class="mode-toggle-shell" role="tablist" aria-label="Buy or Sell Car Toggle">
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              id="modeBuyBtn"
+              class="mode-toggle-btn active"
+            >
+              Buy a Car <span class="default-tag">Default</span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              id="modeSellBtn"
+              class="mode-toggle-btn"
+            >
+              Sell With MK Motors
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL A: BUY LOCALLY USED CARS [DEFAULT ACTIVE] -->
+        <div id="buyCarsPanel">
+          <div class="filter-panel reveal">
+            <div class="filter-top-row">
+              <div class="body-pills" id="bodyTypePills" aria-label="Filter by Body Type">
+                <button type="button" class="chip-btn active" data-body="ALL">All Units (12)</button>
+                <button type="button" class="chip-btn" data-body="SUV">SUV / 4x4</button>
+                <button type="button" class="chip-btn" data-body="Crossover">Crossover</button>
+                <button type="button" class="chip-btn" data-body="Pickup">Pickup</button>
+                <button type="button" class="chip-btn" data-body="Wagon">Wagon</button>
+                <button type="button" class="chip-btn" data-body="Sedan">Sedan</button>
+                <button type="button" class="chip-btn" data-body="Hatchback">Hatchback</button>
+              </div>
+              <button type="button" class="mobile-filter-toggle" id="mobileFilterToggleBtn">
+                More Filters +
+              </button>
+            </div>
+
+            <div class="filter-controls-grid mobile-collapsed" id="filterControlsGrid">
+              <input
+                type="search"
+                id="filterSearch"
+                class="compact-input"
+                placeholder="Search model, reg (KDK, KCM), feature..."
+                aria-label="Search cars"
+              />
+              <select id="filterMake" class="compact-select" aria-label="Filter Make">
+                <option value="ALL">All Makes</option>
+              </select>
+              <select id="filterYear" class="compact-select extra-filter" aria-label="Filter Year">
+                <option value="ALL">All Years</option>
+                <option value="2017_PLUS">2017 &amp; Newer</option>
+                <option value="2016">2016 Models</option>
+                <option value="2015">2015 Models</option>
+              </select>
+              <select id="filterBudget" class="compact-select extra-filter" aria-label="Filter Budget">
+                <option value="ALL">All Budgets (KES)</option>
+                <option value="UNDER_1_5M">Under KES 1.5M</option>
+                <option value="1_5M_2_5M">KES 1.5M – 2.5M</option>
+                <option value="2_5M_4M">KES 2.5M – 4.0M</option>
+                <option value="ABOVE_4M">Above KES 4.0M</option>
+              </select>
+              <select id="filterFuel" class="compact-select extra-filter" aria-label="Filter Fuel">
+                <option value="ALL">All Fuel Types</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybrid</option>
+              </select>
+              <select id="filterDrive" class="compact-select extra-filter" aria-label="Filter Drivetrain">
+                <option value="ALL">All Drivetrains</option>
+                <option value="4WD_AWD">4WD / AWD</option>
+                <option value="2WD_RWD">2WD / RWD</option>
+              </select>
+              <select id="filterSort" class="compact-select extra-filter" aria-label="Sort Vehicles">
+                <option value="FEATURED">Sort: Featured</option>
+                <option value="PRICE_ASC">Price: Low → High</option>
+                <option value="PRICE_DESC">Price: High → Low</option>
+                <option value="YEAR_DESC">Newest Year</option>
+                <option value="MILEAGE_ASC">Lowest Mileage</option>
+              </select>
+            </div>
+
+            <div class="filter-status-bar">
+              <span id="carsCountStatus">Showing 12 of 12 Verified Locally Used Units in Ruiru</span>
+              <button type="button" class="reset-link-btn" id="resetFiltersBtn">Reset Filters</button>
+            </div>
+          </div>
+
+          <!-- Cars Grid: 3-up on Desktop, STRICT 2 IN ONE ROW on Mobile -->
+          <div class="cars-grid" id="carsGrid"></div>
+        </div>
+
+        <!-- PANEL B: SELL WITH MK MOTORS -->
+        <div id="sellCarsPanel" class="sell-panel hidden">
+          <div>
+            <div class="eyebrow">Sell or Trade-In Hassle-Free</div>
+            <h3 class="section-title" style="font-size:1.5rem">Sell Your Locally Used Car Through MK Motors Ruiru</h3>
+            <p class="section-sub">Skip endless random calls and unsafe test drives. We inspect, detail, photograph, and market your vehicle to serious verified buyers.</p>
+
+            <div class="sell-steps">
+              <div class="sell-step">
+                <span class="step-num">1</span>
+                <div>
+                  <h4>Free Ruiru Garage Valuation</h4>
+                  <p>15-minute physical or WhatsApp assessment to agree on a strong, realistic market price.</p>
+                </div>
+              </div>
+              <div class="sell-step">
+                <span class="step-num">2</span>
+                <div>
+                  <h4>Yard Display, Detailing &amp; Buyer Screening</h4>
+                  <p>Machine polish at our bay, professional yard display in Ruiru, and handled viewings.</p>
+                </div>
+              </div>
+              <div class="sell-step">
+                <span class="step-num">3</span>
+                <div>
+                  <h4>Verified Bank Settlement &amp; NTSA TIMS Transfer</h4>
+                  <p>Direct RTGS/M-Pesa payment cleared before instant TIMS ownership transfer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sell-form-card">
+            <h4 style="font-size:1.05rem;font-weight:800;color:var(--blue-deep);margin-bottom:12px">
+              Submit Your Vehicle for Instant WhatsApp Valuation
+            </h4>
+            <form id="sellCarForm" class="form-grid-2">
+              <div class="form-field">
+                <label for="sellOwnerName">Your Name</label>
+                <input id="sellOwnerName" type="text" class="compact-input" placeholder="e.g. John Kamau" required />
+              </div>
+              <div class="form-field">
+                <label for="sellOwnerPhone">Phone / WhatsApp</label>
+                <input id="sellOwnerPhone" type="tel" class="compact-input" placeholder="e.g. 0712 345 678" required />
+              </div>
+              <div class="form-field">
+                <label for="sellCarModel">Make &amp; Model</label>
+                <input id="sellCarModel" type="text" class="compact-input" placeholder="e.g. Mazda Demio / Prado" required />
+              </div>
+              <div class="form-field">
+                <label for="sellRegYear">Year &amp; Reg Series</label>
+                <input id="sellRegYear" type="text" class="compact-input" placeholder="e.g. 2016 • KDG" required />
+              </div>
+              <div class="form-field">
+                <label for="sellAskingPrice">Expected Price (KES)</label>
+                <input id="sellAskingPrice" type="text" class="compact-input" placeholder="e.g. 1,450,000" required />
+              </div>
+              <div class="form-field">
+                <label for="sellOptionType">Preferred Option</label>
+                <select id="sellOptionType" class="compact-select">
+                  <option value="Sell on Consignment (Park & Sell)">Park &amp; Sell (Consignment)</option>
+                  <option value="Instant Cash Buy-Off">Instant Cash Buy-Off</option>
+                  <option value="Trade-In & Top Up">Trade-In for Another Unit</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="sellConditionNotes">Mileage &amp; Condition Notes</label>
+                <textarea id="sellConditionNotes" class="compact-textarea" placeholder="Mileage in km, service history, clean logbook in your name..."></textarea>
+              </div>
+              <div class="form-field full">
+                <button type="submit" class="btn btn-orange" style="width:100%">
+                  Send Vehicle Details to MK Motors WhatsApp →
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PAGE 3: GARAGE — FULL-SERVICE MECHANICAL & BODY WORKSHOP IN RUIRU
+         ===================================================================== -->
+    <section id="garage" class="section section-navy">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">02 • MK Full-Service Workshop — Ruiru</div>
+            <h2 class="section-title">Modern Mechanical, Diagnostic &amp; Body Garage</h2>
+            <p class="section-sub">Experienced Kenyan technicians handling Japanese &amp; European vehicles with genuine parts, hydraulic lifts, and transparent pricing.</p>
+          </div>
+          <a
+            href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Garage%20Ruiru%2C%20I%20would%20like%20to%20book%20a%20service%20bay."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-orange"
+          >
+            Book Garage Bay Now
+          </a>
+        </div>
+
+        <!-- Interactive Symptom Quick-Diagnoser -->
+        <div class="symptom-strip reveal" id="symptomStrip">
+          <span class="symptom-label">⚡ Quick Diagnose:</span>
+          <button type="button" class="symptom-btn" data-bay-target="gar-01">Buying Used Car?</button>
+          <button type="button" class="symptom-btn" data-bay-target="gar-02">Road Knock / Brakes</button>
+          <button type="button" class="symptom-btn" data-bay-target="gar-03">Dents / Dull Paint</button>
+          <button type="button" class="symptom-btn" data-bay-target="gar-04">Oil / Smoke / Turbo</button>
+          <button type="button" class="symptom-btn" data-bay-target="gar-05">CVT / Gearbox Jerk</button>
+          <button type="button" class="symptom-btn" data-bay-target="gar-06">Hybrid / AC / Key</button>
+        </div>
+
+        <!-- Garage Grid: 3-up Desktop, 2-IN-ONE-ROW Mobile -->
+        <div class="garage-grid" id="garageGrid"></div>
+
+        <div class="garage-book-strip reveal">
+          <div>
+            <strong style="font-size:0.98rem;color:var(--blue-deep)">Buying a car elsewhere? Book an Independent Pre-Purchase Lift Scan!</strong>
+            <p style="font-size:0.82rem;color:var(--text-secondary)">Bring any vehicle to our Ruiru bays—we scan hidden fault codes, odometer tampering, accident filler &amp; gearbox health in 60 minutes.</p>
+          </div>
+          <a
+            href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Garage%20Ruiru%2C%20I%20want%20to%20book%20a%2060-minute%20Pre-Purchase%20Car%20Inspection."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-blue"
+          >
+            Book Pre-Purchase Scan →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PROFESSIONAL TRANSPORTATIONS — VEHICLE MOVEMENTS GALLERY ACROSS KENYA
+         ===================================================================== -->
+    <section id="transport" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">03 • Professional Transportations</div>
+            <h2 class="section-title">Nationwide Vehicle Movements &amp; Recovery Gallery</h2>
+            <p class="section-sub">Safe flatbed recovery &amp; multi-car carrier deliveries from Ruiru across Nairobi, Mombasa Highway, Rift Valley, Western &amp; Mt. Kenya.</p>
+          </div>
+          <a
+            href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Transport%2C%20please%20quote%20vehicle%20flatbed%2Fcarrier%20transport%20from%20____%20to%20____."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-orange btn-sm"
+          >
+            Dispatch Flatbed / Carrier
+          </a>
+        </div>
+
+        <div class="transport-filters" id="transportFilterBar">
+          <button type="button" class="chip-btn active" data-region="ALL">All Routes (6)</button>
+          <button type="button" class="chip-btn" data-region="nairobi">Ruiru &amp; Nairobi</button>
+          <button type="button" class="chip-btn" data-region="mombasa">Mombasa Highway</button>
+          <button type="button" class="chip-btn" data-region="rift-valley">Nakuru &amp; Eldoret</button>
+          <button type="button" class="chip-btn" data-region="western">Kisumu &amp; Western</button>
+          <button type="button" class="chip-btn" data-region="mt-kenya">Mt. Kenya Region</button>
+        </div>
+
+        <!-- Transport Gallery Grid: 3-up Desktop, 2-IN-ONE-ROW Mobile -->
+        <div class="transport-grid" id="transportGrid"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PAGE 4: ABOUT US — SHORT, DIRECT, FACTUAL EXPLANATION OF WHAT WE DO
+         ===================================================================== -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="about-box reveal">
+          <div>
+            <div class="eyebrow">04 • About MK Motors Hub &amp; Garage</div>
+            <h2 class="section-title">What We Do — Under One Roof in Ruiru, Kenya</h2>
+            <p class="about-lead-copy">
+              MK Motors Hub &amp; Garage is an automotive dealership, mechanical &amp; body workshop, and vehicle transport operator based in <strong>Ruiru, Kenya</strong>. No hype—just practical, verifiable automotive work under one roof:
+            </p>
+
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <h4>1. Locally Used Cars</h4>
+                <p>We buy, inspect, sell, and consign clean locally used cars in Kenya with verified NTSA TIMS logbooks and full lift reports.</p>
+              </div>
+              <div class="pillar-card">
+                <h4>2. Full Mechanical Garage</h4>
+                <p>Computerized diagnostics, engine &amp; gearbox servicing, suspension overhauls, bodywork, and pre-purchase checks.</p>
+              </div>
+              <div class="pillar-card">
+                <h4>3. Nationwide Transport</h4>
+                <p>Dedicated tilt-bed flatbeds &amp; highway car carriers delivering vehicles safely between Ruiru and every town in Kenya.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual-collage">
+            <img src="assets/images/client-handover-2.jpg" alt="Client car key handover at MK Motors yard in Kenya" loading="lazy" />
+            <img src="assets/images/garage-team-1.jpg" alt="Kenyan mechanics performing diagnostics in MK Garage Ruiru" loading="lazy" />
+            <img src="assets/images/garage-suspension.jpg" alt="Suspension inspection on hydraulic lift in Kenya" loading="lazy" />
+            <img src="assets/images/client-handover-3.jpg" alt="Happy Kenyan car buyer holding keys" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PAGE 5: REVIEWS — 50 GOOGLE VERIFIED REVIEWS (3 AT A GO, 5s REFRESH)
+         ===================================================================== -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">05 • Client Proof</div>
+            <h2 class="section-title">50 Verified Google Reviews</h2>
+            <p class="section-sub">Real feedback from Kenyan car buyers, sellers, workshop clients, and nationwide transport customers—showing 3 at a time, refreshing every 5 seconds.</p>
+          </div>
+        </div>
+
+        <!-- Google Verified Summary Header -->
+        <div class="google-summary-bar reveal">
+          <div class="google-brand-left">
+            <div class="google-g-badge" aria-hidden="true">
+              <!-- Official Multi-Color Google 'G' Vector Mark -->
+              <svg width="26" height="26" viewBox="0 0 48 48">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="rating-big-row">
+                <span class="rating-score">5.0</span>
+                <span class="stars-gold">★★★★★</span>
+                <span class="verified-count-pill">✓ 50 Google Verified Reviews</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-secondary);font-weight:600" id="reviewsBatchStatus">
+                Showing #1–#3 of 50 Google Verified Reviews (Refreshes every 5s)
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-controls-right">
+            <button type="button" class="btn btn-outline btn-sm" id="prevReviewsBtn">← Prev 3</button>
+            <button type="button" class="btn btn-outline btn-sm" id="nextReviewsBtn">Next 3 →</button>
+            <button type="button" class="btn btn-blue btn-sm" id="viewAll50Btn">All 50 Reviews</button>
+          </div>
+        </div>
+
+        <!-- 5-Second Auto-Refresh Progress Sweep -->
+        <div class="reviews-timer-track" aria-hidden="true">
+          <div class="reviews-timer-bar running" id="reviewsTimerBar"></div>
+        </div>
+
+        <!-- Active 3 Reviews Displayed At A Go -->
+        <div class="reviews-grid-3" id="activeReviewsGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         CONTACTS PAGE — RUIRU, KENYA • 0701988296 • moseskibe701@gmail.com
+         ===================================================================== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">06 • Visit or Reach Us</div>
+            <h2 class="section-title">Contact MK Motors Hub &amp; Garage — Ruiru</h2>
+            <p class="section-sub">Call, WhatsApp, email, or visit our yard &amp; mechanical bays in Ruiru, Kenya.</p>
+          </div>
+        </div>
+
+        <div class="contact-layout reveal">
+          <!-- Direct Contact Cards -->
+          <div class="contact-cards-stack">
+            <div class="contact-info-card">
+              <div class="contact-info-left">
+                <div class="c-icon-box">☎</div>
+                <div>
+                  <div class="c-label">Call or WhatsApp Direct</div>
+                  <a href="tel:0701988296" class="c-value">0701988296</a>
+                </div>
+              </div>
+              <div style="display:flex;gap:6px">
+                <button type="button" class="btn btn-outline btn-sm" data-copy-text="0701988296">Copy</button>
+                <a href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Hub%20%26%20Garage%20Ruiru%2C%20I%20would%20like%20assistance." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-left">
+                <div class="c-icon-box">✉</div>
+                <div>
+                  <div class="c-label">Official Gmail</div>
+                  <a href="mailto:moseskibe701@gmail.com" class="c-value">moseskibe701@gmail.com</a>
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" data-copy-text="moseskibe701@gmail.com">Copy</button>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-left">
+                <div class="c-icon-box">📍</div>
+                <div>
+                  <div class="c-label">Yard &amp; Workshop Location</div>
+                  <div class="c-value">Ruiru, Kenya</div>
+                  <div style="font-size:0.75rem;color:var(--text-secondary)">Quick access off Thika Superhighway &amp; Eastern Bypass</div>
+                </div>
+              </div>
+              <a href="https://maps.google.com/?q=Ruiru,Kenya" target="_blank" rel="noopener" class="btn btn-blue btn-sm">Map →</a>
+            </div>
+
+            <div class="contact-info-card" style="background:var(--blue-deep);color:var(--white);border-color:var(--blue-deep)">
+              <div>
+                <div style="font-size:0.72rem;font-weight:800;color:var(--orange);text-transform:uppercase">Working &amp; Dispatch Hours</div>
+                <div style="font-size:0.9rem;font-weight:700;margin-top:3px">Showroom &amp; Garage: Mon – Sat, 8:00 AM – 6:30 PM</div>
+                <div style="font-size:0.78rem;color:rgba(255,255,255,0.78)">24/7 Flatbed Recovery &amp; Scheduled Carrier Transport Across Kenya</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instant Message Form -->
+          <div class="contact-form-box">
+            <h3 style="font-size:1.1rem;font-weight:800;color:var(--blue-deep);margin-bottom:12px">
+              Send a Direct Inquiry
+            </h3>
+            <form id="directContactForm" class="form-grid-2">
+              <div class="form-field">
+                <label for="contactName">Your Name</label>
+                <input id="contactName" type="text" class="compact-input" placeholder="e.g. Grace Wanjiru" required />
+              </div>
+              <div class="form-field">
+                <label for="contactPhone">Phone Number</label>
+                <input id="contactPhone" type="tel" class="compact-input" placeholder="e.g. 0722 000 000" required />
+              </div>
+              <div class="form-field full">
+                <label for="contactTopic">How Can We Help?</label>
+                <select id="contactTopic" class="compact-select">
+                  <option value="Car Purchase / Quotation">Buy a Locally Used Car / Request Quotation</option>
+                  <option value="Sell / Consign My Car">Sell My Car With MK Motors</option>
+                  <option value="Garage Service / Pre-Purchase Check">Book Garage Service / Pre-Purchase Scan</option>
+                  <option value="Professional Vehicle Transport">Book Flatbed / Carrier Vehicle Transport</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" class="compact-textarea" placeholder="Tell us the car model, service needed, or transport route..." required></textarea>
+              </div>
+              <div class="form-field full" style="display:flex;gap:8px;flex-wrap:wrap">
+                <button type="submit" class="btn btn-orange" style="flex:1">
+                  Send on WhatsApp (0701988296)
+                </button>
+                <button type="button" id="sendViaEmailBtn" class="btn btn-blue">
+                  Send via Gmail
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:var(--white)">MK Motors Hub &amp; Garage</strong> — Ruiru, Kenya
+        <div style="font-size:0.76rem;margin-top:3px">Locally Used Cars • Mechanical &amp; Body Workshop • Nationwide Vehicle Transport</div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="tel:0701988296">☎ 0701988296</a>
+        <a href="mailto:moseskibe701@gmail.com">✉ moseskibe701@gmail.com</a>
+        <span>📍 Ruiru, Kenya</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Car Comparison Tray (Appears dynamically when 1–3 cars are selected) -->
+  <div class="compare-tray hidden" id="compareTray" role="region" aria-label="Selected Cars Comparison">
+    <span class="compare-tray-label" id="compareTrayText">Compare (0)</span>
+    <button type="button" class="btn btn-orange btn-sm" id="openCompareModalBtn">Compare Now</button>
+    <button type="button" class="win-ctrl-btn" id="clearCompareBtn" aria-label="Clear compared cars">✕</button>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON ON THE RIGHT-HAND SIDE -->
+  <a
+    href="https://wa.me/254701988296?text=Hello%20MK%20Motors%20Hub%20%26%20Garage%20Ruiru%2C%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20inquire."
+    target="_blank"
+    rel="noopener"
+    class="floating-whatsapp"
+    aria-label="Chat with MK Motors Hub and Garage on WhatsApp 0701988296"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.77 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.83-4.21-4.97-4.4-.15-.19-1.19-1.58-1.19-3.02 0-1.44.75-2.14 1.02-2.44.27-.29.59-.37.78-.37.19 0 .39.01.56.01.18.01.42-.07.66.5.24.58.83 2.02.9 2.17.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.56.34.07.12.07.7-.17 1.38z"/>
+    </svg>
+    <span>WhatsApp Us</span>
+  </a>
+
+  <!-- Car Specs & Transport Gallery Lightbox Modal -->
+  <div class="modal-backdrop hidden" id="genericModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="modal-close" aria-label="Close modal">×</button>
+      <div class="modal-body" id="genericModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Full 50 Google Verified Reviews Modal -->
+  <div class="modal-backdrop hidden" id="allReviewsModal" role="dialog" aria-modal="true" aria-label="All 50 Verified Google Reviews">
+    <div class="modal-card wide">
+      <button type="button" class="modal-close" aria-label="Close all reviews modal">×</button>
+      <div class="modal-body">
+        <div class="eyebrow">Google Verified Reviews</div>
+        <h3 style="font-size:1.35rem;font-weight:900;color:var(--blue-deep)">All 50 Verified Client Reviews — MK Motors Hub &amp; Garage</h3>
+        <div class="all-reviews-list" id="all50ReviewsContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Toast -->
+  <div class="toast-msg hidden" id="toastMsg" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
