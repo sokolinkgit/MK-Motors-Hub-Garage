@@ -1,9 +1,9 @@
 /* ==========================================================================
-   MK Motors Hub & Garage — Ruiru, Kenya
+   MikeMotors[MM] — Ruiru, Kenya
    Interactive Engine (Pure Vanilla JavaScript)
    - Animated Trust Counters + Continuous Scroll Progress & ScrollSpy
    - 2.0s Minimized Showroom & Happy Kenyan Clients Slideshow Window
-   - Buy [Default] / Sell With MK Motors Switcher + Multi-Filter Car Engine
+   - Buy [Default] / Sell With MikeMotors[MM] Switcher + Multi-Filter Car Engine
    - Side-by-Side Car Comparison + Live Deposit & Installment Estimator
    - Garage Symptom Quick-Diagnoser + Nationwide Transport Lightbox
    - 50 Google Verified Reviews (3 shown at a go, 5.0s auto-refresh)
@@ -350,7 +350,7 @@
       "  </table>" +
       "</div>" +
       '<div style="margin-top:16px">' +
-      '  <a href="' + buildWhatsAppUrl("Hello MK Motors Hub & Garage Ruiru, please share quotations & advice comparing: " + names) + '" target="_blank" rel="noopener" class="btn btn-orange" style="width:100%">' +
+      '  <a href="' + buildWhatsAppUrl("Hello MikeMotors[MM] Ruiru, please share quotations & advice comparing: " + names) + '" target="_blank" rel="noopener" class="btn btn-orange" style="width:100%">' +
            ICONS.whatsapp + " Ask Quotation on These Units via WhatsApp" +
       "  </a>" +
       "</div>";
@@ -429,7 +429,7 @@
       .map((car) => {
         const isCompared = comparedIds.includes(car.id);
         const waMsg =
-          "Hello MK Motors Hub & Garage Ruiru, please share your best quotation & viewing availability for the " +
+          "Hello MikeMotors[MM] Ruiru, please share your best quotation & viewing availability for the " +
           car.year + " " + car.make + " " + car.model +
           " (" + car.engineCc + " " + car.fuel + ", " + fmtKm(car.mileageKm) + ", " + car.plateSeries + ", Guide " + car.priceGuide + ").";
         const waHref = buildWhatsAppUrl(waMsg);
@@ -543,7 +543,7 @@
       "  </div>" +
       "</div>" +
       '<div style="background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:10px;margin-bottom:14px;font-size:0.83rem;color:#14532d">' +
-      "  <strong>MK Garage Ruiru 120-Point Check:</strong> " + car.inspectionNote +
+      "  <strong>MikeMotors[MM] Ruiru 120-Point Check:</strong> " + car.inspectionNote +
       "</div>" +
       '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">' +
         car.highlights.map((h) => '<span class="hl-tag">' + h + "</span>").join("") +
@@ -572,7 +572,7 @@
       depOut.textContent = fmtKes(dep);
       monOut.textContent = fmtKes(estMonthly);
       waLink.href = buildWhatsAppUrl(
-        "Hello MK Motors Hub & Garage Ruiru, please share cash & " + pct + "% deposit (" + fmtKes(dep) +
+        "Hello MikeMotors[MM] Ruiru, please share cash & " + pct + "% deposit (" + fmtKes(dep) +
         " over " + months + " months) quotation for the " + car.year + " " + car.make + " " + car.model + " (" + car.plateSeries + ")."
       );
     }
@@ -693,7 +693,7 @@
       renderCars();
     });
 
-    // Sell With MK Motors Form submission -> Direct WhatsApp Valuation
+    // Sell With MikeMotors[MM] Form submission -> Direct WhatsApp Valuation
     document.getElementById("sellCarForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.getElementById("sellOwnerName").value.trim();
@@ -705,7 +705,7 @@
       const notes = document.getElementById("sellConditionNotes").value.trim();
 
       const msg =
-        "Hello MK Motors Hub & Garage Ruiru — SELL MY CAR REQUEST:\n" +
+        "Hello MikeMotors[MM] Ruiru — SELL MY CAR REQUEST:\n" +
         "• Owner: " + name + " (" + phone + ")\n" +
         "• Vehicle: " + model + " (" + regYear + ")\n" +
         "• Target Price: KES " + price + "\n" +
@@ -726,7 +726,7 @@
     const grid = document.getElementById("garageGrid");
     grid.innerHTML = GARAGE.map((g) => {
       const waHref = buildWhatsAppUrl(
-        "Hello MK Motors Garage Ruiru, I would like to book " + g.code + " (" + g.title + "). Please share next available slot."
+        "Hello MikeMotors[MM] Garage Ruiru, I would like to book " + g.code + " (" + g.title + "). Please share next available slot."
       );
       return (
         '<article class="garage-card" id="' + g.id + '">' +
@@ -782,7 +782,7 @@
 
       grid.innerHTML = list.map((item) => {
         const waHref = buildWhatsAppUrl(
-          "Hello MK Motors Transport Team, please share a flatbed/carrier transport quotation for route: " + item.route + "."
+          "Hello MikeMotors[MM] Transport Team, please share a flatbed/carrier transport quotation for route: " + item.route + "."
         );
         return (
           '<article class="transport-card">' +
@@ -827,7 +827,7 @@
         '<span style="font-size:0.74rem;font-weight:800;color:var(--orange);text-transform:uppercase">' + item.corridor + " • " + item.mode + "</span>" +
         '<h3 style="font-size:1.3rem;font-weight:900;color:var(--blue-deep);margin:4px 0 8px">' + item.route + "</h3>" +
         '<p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:16px">' + item.caption + " Typical turnaround: <strong>" + item.eta + "</strong>.</p>" +
-        '<a href="' + buildWhatsAppUrl("Hello MK Motors Hub & Garage, I need vehicle transportation along " + item.route + ". Please share rates.") + '" target="_blank" rel="noopener" class="btn btn-orange">' +
+        '<a href="' + buildWhatsAppUrl("Hello MikeMotors[MM], I need vehicle transportation along " + item.route + ". Please share rates.") + '" target="_blank" rel="noopener" class="btn btn-orange">' +
           ICONS.whatsapp + " Book This Route on WhatsApp (" + CFG.phoneDisplay + ")" +
         "</a>";
       modal.classList.remove("hidden");
@@ -970,22 +970,18 @@
       e.preventDefault();
       const d = gatherContactPayload();
       const text =
-        "Hello MK Motors Hub & Garage Ruiru,\n" +
+        "Hello MikeMotors[MM] Ruiru,\n" +
         "• Name: " + d.name + (d.phone ? " (" + d.phone + ")" : "") + "\n" +
         "• Inquiry: " + d.topic + "\n" +
         "• Details: " + d.msg;
-      showToast("Connecting to MK Motors WhatsApp (0701988296)...");
+      showToast("Connecting to MikeMotors[MM] WhatsApp (0729425345)...");
       window.open(buildWhatsAppUrl(text), "_blank", "noopener");
     });
 
     emailBtn.addEventListener("click", () => {
       const d = gatherContactPayload();
-      const subject = encodeURIComponent("MK Motors Inquiry: " + d.topic + " — " + d.name);
-      const body = encodeURIComponent(
-        "Name: " + d.name + "\nPhone: " + d.phone + "\nTopic: " + d.topic + "\n\nMessage:\n" + d.msg
-      );
-      showToast("Opening email to " + CFG.email + "...");
-      window.location.href = "mailto:" + CFG.email + "?subject=" + subject + "&body=" + body;
+      const text = "Hello MikeMotors[MM],\nName: " + d.name + "\nPhone: " + d.phone + "\nInquiry: " + d.topic + "\n\n" + d.msg;
+      window.open(buildWhatsAppUrl(text), "_blank", "noopener");
     });
 
     document.querySelectorAll(".modal-backdrop").forEach((backdrop) => {
