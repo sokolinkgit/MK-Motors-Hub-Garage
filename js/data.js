@@ -1,11 +1,8 @@
 /* ==========================================================================
-   MikeMotors[MM] — Ruiru, Kenya
+   MikeMotors[MM] — Nairobi, Kenya
    Complete Data Catalog:
    - Minimized Window Slideshow (Units + Happy Kenyan Clients — 2s cadence)
    - 12 Locally Used Vehicles (Full Car-Website Specs & Filters)
-   - 6 Full-Service Garage Packages (Ruiru Workshop)
-   - 6 Nationwide Vehicle Transportation Movements
-   - 50 Verified Google Reviews (3 shown at a go, 5s auto-refresh)
    ========================================================================== */
 
 window.MK_CONFIG = {
@@ -14,8 +11,8 @@ window.MK_CONFIG = {
   phoneRaw: "0729425345",
   whatsappIntl: "254729425345",
   email: "",
-  location: "Ruiru, Kenya",
-  locationDetail: "Along Thika Superhighway / Eastern Bypass Hub, Ruiru, Kenya",
+  location: "Nairobi, Kenya",
+  locationDetail: "Nairobi, Kenya",
   heroSlideshowIntervalMs: 2000, // Exact 2 seconds refresh rate
   reviewsRefreshIntervalMs: 5000, // Exact 5 seconds refresh rate
   reviewsPerBatch: 3 // Shows 3 at a go
@@ -26,9 +23,9 @@ window.HERO_SLIDES = [
   {
     id: "slide-1",
     type: "HAPPY CLIENT",
-    tag: "Key Handover • Ruiru Yard",
+    tag: "Key Handover • Nairobi Yard",
     title: "Mr. & Mrs. Kamau — Clean Mazda CX-5",
-    caption: "Full OBD inspection & same-day NTSA TIMS transfer completed in Ruiru.",
+    caption: "Full OBD inspection & same-day NTSA TIMS transfer completed in Nairobi.",
     image: "assets/images/client-handover-1.jpg"
   },
   {
@@ -42,7 +39,7 @@ window.HERO_SLIDES = [
   {
     id: "slide-3",
     type: "HAPPY CLIENT",
-    tag: "Verified Handover • Ruiru",
+    tag: "Verified Handover • Nairobi",
     title: "David Njuguna — Land Cruiser Prado TX",
     caption: "Serviced at MikeMotors[MM] before handover & delivered with zero mechanical fault.",
     image: "assets/images/client-handover-2.jpg"
@@ -58,7 +55,7 @@ window.HERO_SLIDES = [
   {
     id: "slide-5",
     type: "HAPPY CLIENT",
-    tag: "Happy Buyer • Kiambu / Ruiru",
+    tag: "Happy Buyer • Kiambu / Nairobi",
     title: "Faith Wanjiku — Crossover Handover",
     caption: "Traded up cleanly through MikeMotors[MM] Hub with instant valuation.",
     image: "assets/images/client-handover-3.jpg"
@@ -73,11 +70,11 @@ window.HERO_SLIDES = [
   },
   {
     id: "slide-7",
-    type: "RUIRU DISPATCH",
-    tag: "Doorstep Flatbed • Ruiru",
-    title: "Safe Tilt-Bed Loading Along Thika Rd",
-    caption: "4-point wheel ratchet straps & nationwide delivery across all 47 counties.",
-    image: "assets/images/transport-nairobi.jpg"
+    type: "IMPORTS",
+    tag: "Imported Vehicles • Nairobi",
+    title: "Looking for an Imported Vehicle?",
+    caption: "Talk to us about sourcing an import and available finance and insurance partners.",
+    image: "assets/images/car-prado.jpg"
   },
   {
     id: "slide-8",
@@ -89,11 +86,11 @@ window.HERO_SLIDES = [
   },
   {
     id: "slide-9",
-    type: "MK GARAGE BAY",
-    tag: "120-Point Check • Ruiru",
-    title: "Computerized Pre-Purchase Diagnostics",
-    caption: "Every unit on our Ruiru yard passes full scanner & lift verification.",
-    image: "assets/images/garage-team-1.jpg"
+    type: "NEW & IMPORTED CARS",
+    tag: "120-Point Check • Nairobi",
+    title: "New, Locally Used and Imported Cars",
+    caption: "Contact MikeMotors[MM] in Nairobi about our vehicle options.",
+    image: "assets/images/car-harrier.jpg"
   },
   {
     id: "slide-10",
@@ -147,7 +144,7 @@ window.CARS_INVENTORY = [
     featured: true,
     image: "assets/images/car-forester.jpg",
     highlights: ["Symmetrical AWD", "X-Mode Hill Descent", "EyeSight Assist", "Heated Half-Leather"],
-    inspectionNote: "Fresh Motul turbo service & genuine Subaru CVT fluid flush just completed at MikeMotors[MM] Ruiru."
+    inspectionNote: "Fresh Motul turbo service & genuine Subaru CVT fluid flush just completed at MikeMotors[MM] Nairobi."
   },
   {
     id: "mk-03",
@@ -294,7 +291,7 @@ window.CARS_INVENTORY = [
     featured: false,
     image: "assets/images/car-fielder.jpg",
     highlights: ["24 km/L Economy", "WxB Sport Seats", "HID Bi-Beam Lights", "Spacious Cargo"],
-    inspectionNote: "Hybrid cells balanced and verified healthy; new brake pads & alignment done at Ruiru workshop."
+    inspectionNote: "Hybrid cells balanced and verified healthy; new brake pads & alignment done at Nairobi workshop."
   },
   {
     id: "mk-10",
@@ -357,7 +354,7 @@ window.CARS_INVENTORY = [
     featured: false,
     image: "assets/images/car-swift.jpg",
     highlights: ["19 km/L Town Run", "Keyless Push Start", "Steering Controls", "Low Maintenance"],
-    inspectionNote: "Ideal daily Nairobi-Ruiru commuter; crisp engine compression, ice-cold AC & brand new tyres."
+    inspectionNote: "Ideal daily Nairobi-Nairobi commuter; crisp engine compression, ice-cold AC & brand new tyres."
   }
 ];
 
@@ -369,7 +366,7 @@ window.GARAGE_SERVICES = [
     title: "OBD-II & Pre-Purchase Inspection",
     shortDesc: "Full scanner check on ECU, gearbox, ABS, hybrid battery cells & paint depth before buying any locally used car.",
     turnaround: "60 Mins",
-    image: "assets/images/garage-team-1.jpg",
+    image: "assets/images/car-harrier.jpg",
     items: ["Live ECU & Gearbox Scan", "Hybrid Battery Health %", "Lift Chassis & Rust Check"]
   },
   {
@@ -396,7 +393,7 @@ window.GARAGE_SERVICES = [
     title: "Engine, Turbo & Cooling Service",
     shortDesc: "Genuine synthetic oil packages, injector cleaning, DPF service, timing chains & radiator pressure testing.",
     turnaround: "90 Mins",
-    image: "assets/images/garage-team-1.jpg",
+    image: "assets/images/car-harrier.jpg",
     items: ["Genuine Oil & Filters", "Diesel Injector & DPF", "Cooling & Overheat Fix"]
   },
   {
@@ -424,18 +421,18 @@ window.TRANSPORT_GALLERY = [
   {
     id: "tr-01",
     region: "mombasa",
-    route: "Mombasa → Ruiru / Nairobi",
+    route: "Mombasa → Nairobi / Nairobi",
     corridor: "Mombasa Highway (A109)",
     unitMoved: "Toyota Land Cruiser Prado TX",
     mode: "Single-Unit Flatbed Carrier",
     eta: "Same-Day / Overnight",
     image: "assets/images/transport-mombasa.jpg",
-    caption: "Port & coastal pickup delivered straight to MikeMotors[MM] Ruiru with 4-point wheel-strap lashing."
+    caption: "Port & coastal pickup delivered straight to MikeMotors[MM] Nairobi with 4-point wheel-strap lashing."
   },
   {
     id: "tr-02",
     region: "rift-valley",
-    route: "Ruiru → Nakuru & Eldoret",
+    route: "Nairobi → Nakuru & Eldoret",
     corridor: "Nairobi–Nakuru–Eldoret Highway (A104)",
     unitMoved: "Multi-Unit SUV Batch",
     mode: "Multi-Deck Car Transporter",
@@ -446,18 +443,18 @@ window.TRANSPORT_GALLERY = [
   {
     id: "tr-03",
     region: "nairobi",
-    route: "Ruiru → Thika Rd, Kiambu & Westlands",
+    route: "Nairobi → Thika Rd, Kiambu & Westlands",
     corridor: "Thika Superhighway & Bypass",
     unitMoved: "Volkswagen Tiguan R-Line",
     mode: "Hydraulic Tilt-Bed Flatbed",
     eta: "45–90 Mins",
-    image: "assets/images/transport-nairobi.jpg",
-    caption: "Doorstep client handover and workshop pickup across Ruiru, Kahawa Sukari, Kiambu & Nairobi."
+    image: "assets/images/car-prado.jpg",
+    caption: "Doorstep client handover and workshop pickup across Nairobi, Kahawa Sukari, Kiambu & Nairobi."
   },
   {
     id: "tr-04",
     region: "western",
-    route: "Ruiru → Kisumu, Kericho & Kakamega",
+    route: "Nairobi → Kisumu, Kericho & Kakamega",
     corridor: "Western Kenya Corridor (B1)",
     unitMoved: "Clean Hatchbacks & Crossovers",
     mode: "Twin-Deck Highway Carrier",
@@ -468,7 +465,7 @@ window.TRANSPORT_GALLERY = [
   {
     id: "tr-05",
     region: "mt-kenya",
-    route: "Ruiru → Thika, Nyeri, Nanyuki & Meru",
+    route: "Nairobi → Thika, Nyeri, Nanyuki & Meru",
     corridor: "Kenol–Sagana–Nanyuki (A2)",
     unitMoved: "Toyota Prado 4WD",
     mode: "Dedicated Recovery Flatbed",
@@ -479,66 +476,66 @@ window.TRANSPORT_GALLERY = [
   {
     id: "tr-06",
     region: "nairobi",
-    route: "24/7 Emergency Tow → MikeMotors[MM] Ruiru",
-    corridor: "Eastern Bypass / Ruiru / Juja",
+    route: "24/7 Emergency Tow → MikeMotors[MM] Nairobi",
+    corridor: "Eastern Bypass / Nairobi / Juja",
     unitMoved: "Client Hatchback Recovery",
     mode: "Rapid Response Tilt-Bed",
     eta: "25–40 Mins Local",
     image: "assets/images/transport-ruiru.jpg",
-    caption: "Safe damage-free loading for stalled or accident vehicles straight into our Ruiru diagnostic bay."
+    caption: "Safe damage-free loading for stalled or accident vehicles straight into our Nairobi diagnostic bay."
   }
 ];
 
 /* 5. EXACTLY 50 GOOGLE VERIFIED REVIEWS ( authentic Kenyan reviewers, 3 shown at a go, 5s refresh ) */
 window.GOOGLE_REVIEWS = [
-  { id: 1, name: "Peter Kamau", area: "Ruiru", time: "2 days ago", rating: 5, category: "Bought Car", text: "Bought my locally used Mazda CX-5 here in Ruiru. Moses let my independent check run side-by-side with their lift scan and the logbook transfer took one afternoon." },
+  { id: 1, name: "Peter Kamau", area: "Nairobi", time: "2 days ago", rating: 5, category: "Bought Car", text: "Bought my locally used Mazda CX-5 here in Nairobi. Moses let my independent check run side-by-side with their lift scan and the logbook transfer took one afternoon." },
   { id: 2, name: "Faith Wanjiku", area: "Kahawa Sukari", time: "3 days ago", rating: 5, category: "Bought Car", text: "Cleanest Honda Vezel I viewed after visiting six yards in Nairobi. Honest mileage, fresh gearbox fluid, and zero hidden stories." },
   { id: 3, name: "Brian Ochieng", area: "Kisumu", time: "4 days ago", rating: 5, category: "Vehicle Transport", text: "Paid after video inspection and MikeMotors[MM] transported my Subaru Forester on a carrier all the way to Kisumu without a scratch." },
   { id: 4, name: "Mercy Chebet", area: "Nakuru", time: "5 days ago", rating: 5, category: "Bought Car", text: "Got a super clean Nissan X-Trail 7-seater for our family. They serviced everything in their own garage before handing over keys." },
-  { id: 5, name: "Kelvin Mwangi", area: "Thika Rd", time: "6 days ago", rating: 5, category: "Garage Service", text: "My Prado had a stubborn suspension knock other garages missed. MikeMotors[MM] Ruiru diagnosed worn lower bushes on the lift and fixed it in 3 hours." },
+  { id: 5, name: "Kelvin Mwangi", area: "Thika Rd", time: "6 days ago", rating: 5, category: "Garage Service", text: "My Prado had a stubborn suspension knock other garages missed. MikeMotors[MM] Nairobi diagnosed worn lower bushes on the lift and fixed it in 3 hours." },
   { id: 6, name: "Esther Njeri", area: "Kiambu", time: "1 week ago", rating: 5, category: "Sold Car", text: "Listed my Toyota Fielder on consignment with MikeMotors[MM] Hub. Sold in 9 days at my target price and payment hit my bank before transfer." },
-  { id: 7, name: "Dennis Kiprotich", area: "Eldoret", time: "1 week ago", rating: 5, category: "Vehicle Transport", text: "Flatbed delivery from Ruiru to Eldoret was right on schedule. Driver shared live WhatsApp location pins throughout the journey." },
+  { id: 7, name: "Dennis Kiprotich", area: "Eldoret", time: "1 week ago", rating: 5, category: "Vehicle Transport", text: "Flatbed delivery from Nairobi to Eldoret was right on schedule. Driver shared live WhatsApp location pins throughout the journey." },
   { id: 8, name: "Lilian Akinyi", area: "Syokimau", time: "1 week ago", rating: 5, category: "Bought Car", text: "Straightforward pricing and genuine locally used units. Moses walked me through every line of the OBD scan report." },
   { id: 9, name: "Samuel Mutua", area: "Machakos", time: "1 week ago", rating: 5, category: "Garage Service", text: "Brought a car I almost bought elsewhere for pre-purchase check at MikeMotors[MM]—they saved me from a rolled-back odometer and bad CVT!" },
-  { id: 10, name: "Grace Nyambura", area: "Ruiru Bypass", time: "2 weeks ago", rating: 5, category: "Garage Service", text: "Did full major service and 3-stage buffing here. My black Harrier came out looking brand new off the showroom floor." },
-  { id: 11, name: "Hassan Abdi", area: "Mombasa Rd", time: "2 weeks ago", rating: 5, category: "Vehicle Transport", text: "Used MK flatbed transport to move two vehicles from Mombasa highway straight to Ruiru. Very professional crew and fair rates." },
+  { id: 10, name: "Grace Nyambura", area: "Nairobi Bypass", time: "2 weeks ago", rating: 5, category: "Garage Service", text: "Did full major service and 3-stage buffing here. My black Harrier came out looking brand new off the showroom floor." },
+  { id: 11, name: "Hassan Abdi", area: "Mombasa Rd", time: "2 weeks ago", rating: 5, category: "Vehicle Transport", text: "Used MK flatbed transport to move two vehicles from Mombasa highway straight to Nairobi. Very professional crew and fair rates." },
   { id: 12, name: "Patrick Njuguna", area: "Juja", time: "2 weeks ago", rating: 5, category: "Bought Car", text: "Traded in my old Axio for a clean Forester XT at MikeMotors[MM] Hub. Fair valuation and zero stress from start to finish." },
   { id: 13, name: "Cynthia Moraa", area: "Westlands", time: "2 weeks ago", rating: 5, category: "Sold Car", text: "Didn't have time for random viewing calls so I gave MikeMotors[MM] my Swift to sell. Smooth process and very transparent agreement." },
-  { id: 14, name: "Josephat Karanja", area: "Nyeri", time: "3 weeks ago", rating: 5, category: "Bought Car", text: "Hilux Double Cab was exactly as described on WhatsApp. Clean chassis, zero rust, 4x4 tested right there in Ruiru." },
-  { id: 15, name: "Beatrice Wambui", area: "Membley, Ruiru", time: "3 weeks ago", rating: 5, category: "Garage Service", text: "Best garage in Ruiru hands down. Neat bays, honest mechanics who actually show you the old parts they replaced." },
-  { id: 16, name: "Victor Otieno", area: "Lang'ata", time: "3 weeks ago", rating: 5, category: "Bought Car", text: "Requested a WhatsApp quotation at 9am, viewed the VW Tiguan at noon in Ruiru, and drove home by 4pm. Super efficient." },
+  { id: 14, name: "Josephat Karanja", area: "Nyeri", time: "3 weeks ago", rating: 5, category: "Bought Car", text: "Hilux Double Cab was exactly as described on WhatsApp. Clean chassis, zero rust, 4x4 tested right there in Nairobi." },
+  { id: 15, name: "Beatrice Wambui", area: "Membley, Nairobi", time: "3 weeks ago", rating: 5, category: "Garage Service", text: "Best garage in Nairobi hands down. Neat bays, honest mechanics who actually show you the old parts they replaced." },
+  { id: 16, name: "Victor Otieno", area: "Lang'ata", time: "3 weeks ago", rating: 5, category: "Bought Car", text: "Requested a WhatsApp quotation at 9am, viewed the VW Tiguan at noon in Nairobi, and drove home by 4pm. Super efficient." },
   { id: 17, name: "Annette Mumbi", area: "Kasarani", time: "3 weeks ago", rating: 5, category: "Garage Service", text: "Fixed my hybrid battery cooling fan and balanced weak cells on my Fielder Hybrid for a fraction of what dealers quoted." },
-  { id: 18, name: "Daniel Kiptoo", area: "Kericho", time: "1 month ago", rating: 5, category: "Vehicle Transport", text: "Reliable carrier service from Ruiru to Kericho town. Car arrived clean with full fuel reading intact as handed over." },
+  { id: 18, name: "Daniel Kiptoo", area: "Kericho", time: "1 month ago", rating: 5, category: "Vehicle Transport", text: "Reliable carrier service from Nairobi to Kericho town. Car arrived clean with full fuel reading intact as handed over." },
   { id: 19, name: "Pauline Ndunge", area: "Kitengela", time: "1 month ago", rating: 5, category: "Bought Car", text: "What stood out to me is having both the car yard and real mechanical garage in one compound. Total peace of mind." },
   { id: 20, name: "Eric Macharia", area: "Thika", time: "1 month ago", rating: 5, category: "Garage Service", text: "Gearbox ATF flush on my Mercedes C200 done with genuine spec oil. Gear changes are silky smooth now." },
-  { id: 21, name: "Sharon Chepkoech", area: "Nanyuki", time: "1 month ago", rating: 5, category: "Vehicle Transport", text: "Called 0729425345 at night when my car stalled near Kenol—MK recovery flatbed arrived in 35 minutes and towed straight to their Ruiru bay." },
-  { id: 22, name: "Martin Githinji", area: "Ruiru", time: "1 month ago", rating: 5, category: "Sold Car", text: "Got instant cash buy-off when relocating abroad. Fair market offer and NTSA TIMS transfer completed right in front of me." },
+  { id: 21, name: "Sharon Chepkoech", area: "Nanyuki", time: "1 month ago", rating: 5, category: "Vehicle Transport", text: "Called 0729425345 at night when my car stalled near Kenol—MK recovery flatbed arrived in 35 minutes and towed straight to their Nairobi bay." },
+  { id: 22, name: "Martin Githinji", area: "Nairobi", time: "1 month ago", rating: 5, category: "Sold Car", text: "Got instant cash buy-off when relocating abroad. Fair market offer and NTSA TIMS transfer completed right in front of me." },
   { id: 23, name: "Winnie Auma", area: "Kilimani", time: "1 month ago", rating: 5, category: "Bought Car", text: "Bought a clean lady-driven Suzuki Swift for town errands. Fuel economy is amazing and everything works perfectly." },
   { id: 24, name: "Stephen Kariuki", area: "Murang'a", time: "1 month ago", rating: 5, category: "Garage Service", text: "Diesel injector calibration and DPF cleaning on my CX-5 eliminated black smoke completely. Highly knowledgeable technicians." },
   { id: 25, name: "Jacqueline Mutheu", area: "Roysambu", time: "2 months ago", rating: 5, category: "Garage Service", text: "Panel beating and colour matching on my rear bumper was 100% invisible. You cannot tell it was ever touched." },
   { id: 26, name: "Collins Wekesa", area: "Bungoma", time: "2 months ago", rating: 5, category: "Bought Car", text: "Travelled from Western after getting detailed walkaround videos on WhatsApp. The Outlander was even cleaner in person." },
-  { id: 27, name: "Naomi Njoki", area: "Tatu City, Ruiru", time: "2 months ago", rating: 5, category: "Garage Service", text: "So convenient near Tatu City and Eastern Bypass. I drop my car at 8:30am for service and pick it washed at lunchtime." },
+  { id: 27, name: "Naomi Njoki", area: "Tatu City, Nairobi", time: "2 months ago", rating: 5, category: "Garage Service", text: "So convenient near Tatu City and Eastern Bypass. I drop my car at 8:30am for service and pick it washed at lunchtime." },
   { id: 28, name: "George Omondi", area: "South C", time: "2 months ago", rating: 5, category: "Bought Car", text: "No pushy sales talk—Moses just gives honest mechanical facts on each car so you choose confidently." },
-  { id: 29, name: "Purity Kendi", area: "Meru", time: "2 months ago", rating: 5, category: "Vehicle Transport", text: "Flatbed delivery from Ruiru yard right to Meru town gate. Excellent communication the whole way." },
+  { id: 29, name: "Purity Kendi", area: "Meru", time: "2 months ago", rating: 5, category: "Vehicle Transport", text: "Flatbed delivery from Nairobi yard right to Meru town gate. Excellent communication the whole way." },
   { id: 30, name: "Antony Mburu", area: "Githurai 45", time: "2 months ago", rating: 5, category: "Garage Service", text: "Brake discs skimmed and ceramic pads installed quickly. Zero squealing and solid stopping power on Thika Superhighway." },
   { id: 31, name: "Rebecca Naliaka", area: "Ngong Rd", time: "2 months ago", rating: 5, category: "Sold Car", text: "Sold my Nissan X-Trail through MikeMotors[MM]. They detailed it first in their bay which helped it sell fast." },
-  { id: 32, name: "Simon Kuria", area: "Limuru", time: "3 months ago", rating: 5, category: "Bought Car", text: "Second car our family has bought from MikeMotors[MM] in Ruiru. Clean logbooks and honest history both times." },
+  { id: 32, name: "Simon Kuria", area: "Limuru", time: "3 months ago", rating: 5, category: "Bought Car", text: "Second car our family has bought from MikeMotors[MM] in Nairobi. Clean logbooks and honest history both times." },
   { id: 33, name: "Doreen Mwende", area: "Embu", time: "3 months ago", rating: 5, category: "Bought Car", text: "Very responsive on WhatsApp and email. Sent me full quotation breakdown within five minutes of asking." },
   { id: 34, name: "Kennedy Onyango", area: "Embakasi", time: "3 months ago", rating: 5, category: "Garage Service", text: "AC regas and evaporator service solved poor cooling in Nairobi traffic. Cold air within seconds now." },
-  { id: 35, name: "Hilda Jeptoo", area: "Naivasha", time: "3 months ago", rating: 5, category: "Vehicle Transport", text: "Towed my SUV safely from Naivasha highway to Ruiru when the radiator hose burst, repaired it same day!" },
-  { id: 36, name: "Lawrence Maina", area: "Ruiru Kimbo", time: "3 months ago", rating: 5, category: "Garage Service", text: "Trusted neighborhood workshop in Ruiru. Genuine Toyota filters and oil every single time." },
+  { id: 35, name: "Hilda Jeptoo", area: "Naivasha", time: "3 months ago", rating: 5, category: "Vehicle Transport", text: "Towed my SUV safely from Naivasha highway to Nairobi when the radiator hose burst, repaired it same day!" },
+  { id: 36, name: "Lawrence Maina", area: "Nairobi Kimbo", time: "3 months ago", rating: 5, category: "Garage Service", text: "Trusted neighborhood workshop in Nairobi. Genuine Toyota filters and oil every single time." },
   { id: 37, name: "Millicent Adhiambo", area: "Lavington", time: "3 months ago", rating: 5, category: "Bought Car", text: "Purchased a clean black Harrier Premium. Every button, power boot, and sensor tested before handover." },
   { id: 38, name: "Nicholas Mutinda", area: "Athi River", time: "4 months ago", rating: 5, category: "Garage Service", text: "Pre-purchase inspection report was thorough with photos under the lift. Worth every shilling." },
-  { id: 39, name: "Veronica Wairimu", area: "Kenyatta Rd", time: "4 months ago", rating: 5, category: "Bought Car", text: "Love how clean and organized MikeMotors[MM] yard is along Ruiru route. Easy access off Thika Superhighway." },
+  { id: 39, name: "Veronica Wairimu", area: "Kenyatta Rd", time: "4 months ago", rating: 5, category: "Bought Car", text: "Love how clean and organized MikeMotors[MM] yard is along Nairobi route. Easy access off Thika Superhighway." },
   { id: 40, name: "Alex Koech", area: "Bomet", time: "4 months ago", rating: 5, category: "Bought Car", text: "Got a locally used Toyota Fielder Hybrid in top mechanical shape. Still averaging 22 km/L daily." },
   { id: 41, name: "Agnes Nyokabi", area: "Kikuyu", time: "4 months ago", rating: 5, category: "Garage Service", text: "Busy Saturday morning at the garage bays, waited 20 mins, then service was super thorough and well priced." },
   { id: 42, name: "Benson Barasa", area: "Kitale", time: "4 months ago", rating: 5, category: "Vehicle Transport", text: "Moved our new farm double-cab pickup on carrier up to Kitale safely without adding road mileage." },
   { id: 43, name: "Irene Gathoni", area: "Ridgeways", time: "4 months ago", rating: 5, category: "Sold Car", text: "Smooth consignment sale for my Vezel. Transparent commission and instant RTGS settlement." },
   { id: 44, name: "Moses Njoroge", area: "Juja Farm", time: "5 months ago", rating: 5, category: "Garage Service", text: "Upgraded shock absorbers and coil spacers here for rough roads—car handles bumps effortlessly now." },
-  { id: 45, name: "Yvonne Kemunto", area: "Kisii", time: "5 months ago", rating: 5, category: "Bought Car", text: "Honest Kenyan dealership! What they show on screen is the exact clean car standing in Ruiru." },
+  { id: 45, name: "Yvonne Kemunto", area: "Kisii", time: "5 months ago", rating: 5, category: "Bought Car", text: "Honest Kenyan dealership! What they show on screen is the exact clean car standing in Nairobi." },
   { id: 46, name: "Caleb Mwakio", area: "Voi / Coast", time: "5 months ago", rating: 5, category: "Vehicle Transport", text: "Quick recovery & flatbed service along Mombasa highway corridor. Very dependable dispatch team." },
-  { id: 47, name: "Martha Waithera", area: "Ruiru", time: "5 months ago", rating: 5, category: "Garage Service", text: "Headlight restoration and ceramic polish made my 2015 car look 8 years younger. Great attention to detail." },
+  { id: 47, name: "Martha Waithera", area: "Nairobi", time: "5 months ago", rating: 5, category: "Garage Service", text: "Headlight restoration and ceramic polish made my 2015 car look 8 years younger. Great attention to detail." },
   { id: 48, name: "Edwin Kirui", area: "Narok", time: "5 months ago", rating: 5, category: "Bought Car", text: "Bought a Prado TX-L after comparing prices across town. MikeMotors[MM] gave the cleanest unit and best deal." },
   { id: 49, name: "Salome Mwikali", area: "Utawala", time: "6 months ago", rating: 5, category: "Garage Service", text: "Smart key programming and ECU diagnostic check sorted fast while I had coffee at the waiting lounge." },
-  { id: 50, name: "Julius Oduor", area: "Runda / Kiambu Rd", time: "6 months ago", rating: 5, category: "Bought Car", text: "Five stars to Moses and the entire MikeMotors[MM] Ruiru crew. Genuine locally used cars backed by a real workshop." }
+  { id: 50, name: "Julius Oduor", area: "Runda / Kiambu Rd", time: "6 months ago", rating: 5, category: "Bought Car", text: "Five stars to Moses and the entire MikeMotors[MM] Nairobi crew. Genuine locally used cars backed by a real workshop." }
 ];
