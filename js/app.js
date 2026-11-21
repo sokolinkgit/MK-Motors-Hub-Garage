@@ -1,12 +1,10 @@
 /* ==========================================================================
-   MikeMotors[MM] — Ruiru, Kenya
+   MikeMotors[MM] — Nairobi, Kenya
    Interactive Engine (Pure Vanilla JavaScript)
    - Animated Trust Counters + Continuous Scroll Progress & ScrollSpy
    - 2.0s Minimized Showroom & Happy Kenyan Clients Slideshow Window
    - Buy [Default] / Sell With MikeMotors[MM] Switcher + Multi-Filter Car Engine
    - Side-by-Side Car Comparison + Live Deposit & Installment Estimator
-   - Garage Symptom Quick-Diagnoser + Nationwide Transport Lightbox
-   - 50 Google Verified Reviews (3 shown at a go, 5.0s auto-refresh)
    ========================================================================== */
 
 (function () {
@@ -15,8 +13,6 @@
   const CFG = window.MK_CONFIG;
   const SLIDES = window.HERO_SLIDES || [];
   const CARS = window.CARS_INVENTORY || [];
-  const GARAGE = window.GARAGE_SERVICES || [];
-  const TRANSPORT = window.TRANSPORT_GALLERY || [];
   const REVIEWS = window.GOOGLE_REVIEWS || [];
 
   /* Helper: Build WhatsApp Deep Link */
@@ -350,7 +346,7 @@
       "  </table>" +
       "</div>" +
       '<div style="margin-top:16px">' +
-      '  <a href="' + buildWhatsAppUrl("Hello MikeMotors[MM] Ruiru, please share quotations & advice comparing: " + names) + '" target="_blank" rel="noopener" class="btn btn-orange" style="width:100%">' +
+      '  <a href="' + buildWhatsAppUrl("Hello MikeMotors[MM] Nairobi, please share quotations & advice comparing: " + names) + '" target="_blank" rel="noopener" class="btn btn-orange" style="width:100%">' +
            ICONS.whatsapp + " Ask Quotation on These Units via WhatsApp" +
       "  </a>" +
       "</div>";
@@ -411,7 +407,7 @@
     const countLabel = document.getElementById("carsCountStatus");
     const filtered = filterCarsList();
 
-    countLabel.textContent = "Showing " + filtered.length + " of " + CARS.length + " Verified Locally Used Units in Ruiru";
+    countLabel.textContent = "Showing " + filtered.length + " of " + CARS.length + " Verified Locally Used Units";
 
     if (!filtered.length) {
       grid.innerHTML =
@@ -429,7 +425,7 @@
       .map((car) => {
         const isCompared = comparedIds.includes(car.id);
         const waMsg =
-          "Hello MikeMotors[MM] Ruiru, please share your best quotation & viewing availability for the " +
+          "Hello MikeMotors[MM] Nairobi, please share your best quotation & viewing availability for the " +
           car.year + " " + car.make + " " + car.model +
           " (" + car.engineCc + " " + car.fuel + ", " + fmtKm(car.mileageKm) + ", " + car.plateSeries + ", Guide " + car.priceGuide + ").";
         const waHref = buildWhatsAppUrl(waMsg);
@@ -543,7 +539,7 @@
       "  </div>" +
       "</div>" +
       '<div style="background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:10px;margin-bottom:14px;font-size:0.83rem;color:#14532d">' +
-      "  <strong>MikeMotors[MM] Ruiru 120-Point Check:</strong> " + car.inspectionNote +
+      "  <strong>MikeMotors[MM] Nairobi 120-Point Check:</strong> " + car.inspectionNote +
       "</div>" +
       '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">' +
         car.highlights.map((h) => '<span class="hl-tag">' + h + "</span>").join("") +
@@ -572,7 +568,7 @@
       depOut.textContent = fmtKes(dep);
       monOut.textContent = fmtKes(estMonthly);
       waLink.href = buildWhatsAppUrl(
-        "Hello MikeMotors[MM] Ruiru, please share cash & " + pct + "% deposit (" + fmtKes(dep) +
+        "Hello MikeMotors[MM] Nairobi, please share cash & " + pct + "% deposit (" + fmtKes(dep) +
         " over " + months + " months) quotation for the " + car.year + " " + car.make + " " + car.model + " (" + car.plateSeries + ")."
       );
     }
@@ -705,7 +701,7 @@
       const notes = document.getElementById("sellConditionNotes").value.trim();
 
       const msg =
-        "Hello MikeMotors[MM] Ruiru — SELL MY CAR REQUEST:\n" +
+        "Hello MikeMotors[MM] Nairobi — SELL MY CAR REQUEST:\n" +
         "• Owner: " + name + " (" + phone + ")\n" +
         "• Vehicle: " + model + " (" + regYear + ")\n" +
         "• Target Price: KES " + price + "\n" +
@@ -717,225 +713,6 @@
     });
 
     renderCars();
-  }
-
-  /* ========================================================================
-     4. GARAGE SECTION RENDERER, SYMPTOM DIAGNOSER & WHATSAPP BAY BOOKING
-     ======================================================================== */
-  function initGarageSection() {
-    const grid = document.getElementById("garageGrid");
-    grid.innerHTML = GARAGE.map((g) => {
-      const waHref = buildWhatsAppUrl(
-        "Hello MikeMotors[MM] Garage Ruiru, I would like to book " + g.code + " (" + g.title + "). Please share next available slot."
-      );
-      return (
-        '<article class="garage-card" id="' + g.id + '">' +
-        '  <div class="garage-img-wrap">' +
-        '    <img src="' + g.image + '" alt="' + g.title + '" loading="lazy" />' +
-        '    <span class="bay-pill">' + g.code + "</span>" +
-        '    <span class="eta-pill">' + g.turnaround + "</span>" +
-        "  </div>" +
-        '  <div class="garage-body">' +
-        '    <h3 class="garage-title">' + g.title + "</h3>" +
-        '    <p class="garage-desc">' + g.shortDesc + "</p>" +
-        '    <ul class="garage-checklist">' +
-               g.items.map((it) => "<li>" + it + "</li>").join("") +
-        "    </ul>" +
-        '    <a href="' + waHref + '" target="_blank" rel="noopener" class="btn btn-orange btn-sm" style="margin-top:auto">' +
-               ICONS.whatsapp + " Book Bay on WhatsApp" +
-        "    </a>" +
-        "  </div>" +
-        "</article>"
-      );
-    }).join("");
-
-    // Symptom Quick-Diagnoser interaction
-    document.querySelectorAll("#symptomStrip .symptom-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const bayId = btn.getAttribute("data-bay-target");
-        document.querySelectorAll("#symptomStrip .symptom-btn").forEach((b) => {
-          b.classList.toggle("active", b === btn);
-        });
-        document.querySelectorAll("#garageGrid .garage-card").forEach((card) => {
-          card.classList.toggle("bay-spotlight", card.id === bayId);
-        });
-        const targetCard = document.getElementById(bayId);
-        if (targetCard) {
-          targetCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          showToast("Recommended Ruiru Workshop Bay highlighted!");
-        }
-      });
-    });
-  }
-
-  /* ========================================================================
-     5. PROFESSIONAL TRANSPORTATIONS GALLERY + LIGHTBOX
-     ======================================================================== */
-  function initTransportSection() {
-    const grid = document.getElementById("transportGrid");
-    let activeRegion = "ALL";
-
-    function renderTransport() {
-      const list = activeRegion === "ALL"
-        ? TRANSPORT
-        : TRANSPORT.filter((t) => t.region === activeRegion);
-
-      grid.innerHTML = list.map((item) => {
-        const waHref = buildWhatsAppUrl(
-          "Hello MikeMotors[MM] Transport Team, please share a flatbed/carrier transport quotation for route: " + item.route + "."
-        );
-        return (
-          '<article class="transport-card">' +
-          '  <div class="transport-img-box" data-open-transport="' + item.id + '">' +
-          '    <img src="' + item.image + '" alt="' + item.route + '" loading="lazy" />' +
-          '    <span class="route-badge">' + item.corridor + "</span>" +
-          '    <span class="zoom-hint">View</span>' +
-          "  </div>" +
-          '  <div class="transport-body">' +
-          '    <h3 class="transport-route-title">' + item.route + "</h3>" +
-          '    <div class="transport-meta">' + item.mode + " • " + item.eta + "</div>" +
-          '    <p class="transport-caption">' + item.caption + "</p>" +
-          '    <a href="' + waHref + '" target="_blank" rel="noopener" class="btn btn-blue btn-sm">' +
-                 ICONS.whatsapp + " Request Transport Quote" +
-          "    </a>" +
-          "  </div>" +
-          "</article>"
-        );
-      }).join("");
-    }
-
-    document.querySelectorAll("#transportFilterBar .chip-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        activeRegion = btn.dataset.region;
-        document.querySelectorAll("#transportFilterBar .chip-btn").forEach((b) => {
-          b.classList.toggle("active", b === btn);
-        });
-        renderTransport();
-      });
-    });
-
-    grid.addEventListener("click", (e) => {
-      const box = e.target.closest("[data-open-transport]");
-      if (!box) return;
-      const item = TRANSPORT.find((t) => t.id === box.getAttribute("data-open-transport"));
-      if (!item) return;
-
-      const modal = document.getElementById("genericModal");
-      const content = document.getElementById("genericModalBody");
-      content.innerHTML =
-        '<img src="' + item.image + '" alt="' + item.route + '" style="width:100%;max-height:420px;object-fit:cover;border-radius:12px;margin-bottom:14px" />' +
-        '<span style="font-size:0.74rem;font-weight:800;color:var(--orange);text-transform:uppercase">' + item.corridor + " • " + item.mode + "</span>" +
-        '<h3 style="font-size:1.3rem;font-weight:900;color:var(--blue-deep);margin:4px 0 8px">' + item.route + "</h3>" +
-        '<p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:16px">' + item.caption + " Typical turnaround: <strong>" + item.eta + "</strong>.</p>" +
-        '<a href="' + buildWhatsAppUrl("Hello MikeMotors[MM], I need vehicle transportation along " + item.route + ". Please share rates.") + '" target="_blank" rel="noopener" class="btn btn-orange">' +
-          ICONS.whatsapp + " Book This Route on WhatsApp (" + CFG.phoneDisplay + ")" +
-        "</a>";
-      modal.classList.remove("hidden");
-    });
-
-    renderTransport();
-  }
-
-  /* ========================================================================
-     6. GOOGLE VERIFIED REVIEWS — 50 REVIEWS, 3 AT A GO, 5-SECOND REFRESH
-     ======================================================================== */
-  function renderReviewCardHTML(rev) {
-    const initials = rev.name
-      .split(" ")
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((p) => p[0].toUpperCase())
-      .join("");
-    const stars = "★".repeat(rev.rating);
-
-    return (
-      '<article class="review-card">' +
-      '  <div class="review-head">' +
-      '    <div class="reviewer-profile">' +
-      '      <div class="reviewer-avatar">' + initials + "</div>" +
-      "      <div>" +
-      '        <div class="reviewer-name">' + rev.name + "</div>" +
-      '        <div class="reviewer-meta">' + rev.area + " • " + rev.time + "</div>" +
-      "      </div>" +
-      "    </div>" +
-      '    <span class="google-verified-tag">✓ Google Verified</span>' +
-      "  </div>" +
-      '  <div class="review-stars-row">' +
-      '    <span class="stars-gold" aria-label="5 out of 5 stars">' + stars + "</span>" +
-      '    <span class="review-cat-pill">' + rev.category + "</span>" +
-      "  </div>" +
-      '  <p class="review-text">“' + rev.text + '”</p>' +
-      "</article>"
-    );
-  }
-
-  function initGoogleReviews() {
-    if (!REVIEWS.length) return;
-
-    const container = document.getElementById("activeReviewsGrid");
-    const statusLabel = document.getElementById("reviewsBatchStatus");
-    const timerBar = document.getElementById("reviewsTimerBar");
-    const prevBtn = document.getElementById("prevReviewsBtn");
-    const nextBtn = document.getElementById("nextReviewsBtn");
-    const viewAllBtn = document.getElementById("viewAll50Btn");
-
-    let startIndex = 0;
-    let intervalId = null;
-
-    function restartFiveSecBar() {
-      if (!timerBar) return;
-      timerBar.classList.remove("running");
-      void timerBar.offsetWidth;
-      timerBar.classList.add("running");
-    }
-
-    function showBatch() {
-      const batch = [];
-      for (let k = 0; k < CFG.reviewsPerBatch; k++) {
-        batch.push(REVIEWS[(startIndex + k) % REVIEWS.length]);
-      }
-
-      container.innerHTML = batch.map(renderReviewCardHTML).join("");
-
-      const firstNum = batch[0].id;
-      const lastNum = batch[batch.length - 1].id;
-      statusLabel.textContent =
-        "Showing #" + firstNum + "–#" + lastNum + " of " + REVIEWS.length + " Google Verified Reviews (Refreshes every 5s)";
-
-      restartFiveSecBar();
-    }
-
-    function advanceBatch(step) {
-      startIndex = (startIndex + step + REVIEWS.length) % REVIEWS.length;
-      showBatch();
-    }
-
-    function resetAutoRefresh() {
-      clearInterval(intervalId);
-      intervalId = setInterval(() => {
-        advanceBatch(CFG.reviewsPerBatch);
-      }, CFG.reviewsRefreshIntervalMs);
-    }
-
-    prevBtn.addEventListener("click", () => {
-      advanceBatch(-CFG.reviewsPerBatch);
-      resetAutoRefresh();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      advanceBatch(CFG.reviewsPerBatch);
-      resetAutoRefresh();
-    });
-
-    viewAllBtn.addEventListener("click", () => {
-      const modal = document.getElementById("allReviewsModal");
-      const listEl = document.getElementById("all50ReviewsContainer");
-      listEl.innerHTML = REVIEWS.map(renderReviewCardHTML).join("");
-      modal.classList.remove("hidden");
-    });
-
-    showBatch();
-    resetAutoRefresh();
   }
 
   /* ========================================================================
@@ -970,7 +747,7 @@
       e.preventDefault();
       const d = gatherContactPayload();
       const text =
-        "Hello MikeMotors[MM] Ruiru,\n" +
+        "Hello MikeMotors[MM] Nairobi,\n" +
         "• Name: " + d.name + (d.phone ? " (" + d.phone + ")" : "") + "\n" +
         "• Inquiry: " + d.topic + "\n" +
         "• Details: " + d.msg;
@@ -1003,9 +780,6 @@
     initScrollFeatures();
     initHeroMiniSlideshow();
     initCarsSection();
-    initGarageSection();
-    initTransportSection();
-    initGoogleReviews();
     initContactsAndModals();
   });
 })();
